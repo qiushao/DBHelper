@@ -12,8 +12,31 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
+        android:id="@+id/insert"
+        android:text="insert"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/delete"
+        android:text="delete"
+        android:layout_toRightOf="@id/insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/update"
+        android:text="update"
+        android:layout_toRightOf="@id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/query"
+        android:text="query"
+        android:layout_toRightOf="@id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

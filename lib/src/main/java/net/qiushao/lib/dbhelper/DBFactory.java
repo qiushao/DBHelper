@@ -32,7 +32,11 @@ public class DBFactory {
 		map = new ConcurrentHashMap<String, DBHelper>();
 	}
 
-	public synchronized DBHelper getDBHelper(Class<?> claz, String dir) {
+	public synchronized DBHelper getDBHelper(Class<?> claz) {
+		return getDBHelper(claz, null);
+	}
+
+	public synchronized DBHelper getDBHelper(Class<?> claz, String databaseDir) {
 		Database database = claz.getAnnotation(Database.class);
 		Table table = claz.getAnnotation(Table.class);
 		if (database == null || table == null)
@@ -55,8 +59,11 @@ public class DBFactory {
 		if (map.containsKey(key)) {
 			return map.get(key);
 		}
-		
-		DBHelper db = new DBHelper(context, dir, dbName, table.version(), claz);
+
+        if(databaseDir == null) {
+            databaseDir = context.getDatabasePath("dbhelper").getParentFile().getAbsolutePath();
+        }
+		DBHelper db = new DBHelper(context, databaseDir, dbName, table.version(), claz);
 		map.put(key, db);
 		return db;
 	}
