@@ -24,6 +24,16 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
+task makeJar(type: Copy) {
+    delete 'build/libs/dbhelper.jar'
+    from('build/intermediates/bundles/release/')
+    into('build/libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'dbhelper.jar')
+}
+
+makeJar.dependsOn(build)
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.0"
