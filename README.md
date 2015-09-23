@@ -17,7 +17,9 @@ compile 'net.qiushao:dbhelper:1.0.2'
 
 ### example
 
-#### 1. define a java bean with Database Annotation, this java bean will be a table
+#### 1. define a java bean with Database Annotation,
+`Note` :this java bean will be a table,dbhelper will add a column `_id` automatic as the primary key.
+
 ```
 package net.qiushao.dbhelper;
 
