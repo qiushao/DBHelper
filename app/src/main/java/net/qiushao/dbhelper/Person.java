@@ -6,8 +6,11 @@ import net.qiushao.lib.dbhelper.annotation.Table;
 
 /**
  * Created by shaoqiu on 2015-9-22.
+ * timestamp default is false, database name will be person.db,
+ * if you set true, the database name will be personyy-mm-dd.db.
+ * Column index start with `1`, because index 0 used as primary key `_id`.
  */
-@Database(name = "person")
+@Database(name = "person", timestamp = true)
 @Table(name = "person")
 public class Person {
     @Column(index = 1)
