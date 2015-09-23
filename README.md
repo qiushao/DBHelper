@@ -7,7 +7,7 @@ an light weight android orm framwork
 
 ### import library
 #### eclipse
-download the library [dbhelper.jar](https://github.com/qiushao/DBHelper/blob/master/dbhelper.jar)，put it into your project's `libs` directory.
+download the library [dbhelper.jar](https://github.com/qiushao/DBHelper/raw/master/downloads/dbhelper.jar)，put it into your project's `libs` directory.
 
 #### gradle
 add this dependency in your module build.gradle file
@@ -92,3 +92,4 @@ private void insert() {
         }
     }
 ```
+
