@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteStatement;
 import android.text.TextUtils;
 
 import net.qiushao.lib.dbhelper.annotation.Column;
-import net.qiushao.lib.dbhelper.annotation.Table;
+import net.qiushao.lib.dbhelper.annotation.Database;
 
 import java.lang.reflect.Field;
 import java.util.Collection;
@@ -19,6 +19,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class DBHelper extends SQLiteOpenHelper{
+
+    private static boolean debug = true;
 
 	private Class<?> claz;
     private SQLiteDatabase db;
@@ -31,13 +33,17 @@ public class DBHelper extends SQLiteOpenHelper{
     private int tableVersion;
     private String createTableSql;
     private String insertSql;
+    private boolean autoincrement;
     private LinkedList<ColumnInfo> columns;
-    
-	public DBHelper(Context context, String dir, String name, int version, Class<?> claz) {
-		super(new CustomPathDatabaseContext(context, dir), name, null, version);
-		dbName = name;
+    private LinkedList<ColumnInfo> primaryColumns;
+
+	public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz) {
+		super(new CustomPathDatabaseContext(context, dir), dbName, null, version);
+		this.dbName = dbName;
+        this.tableName = tableName;
         tableVersion = version;
         this.claz = claz;
+        autoincrement = claz.getAnnotation(Database.class).addID();
         initDatabaseInfo();
         db = getWritableDatabase();
         db.execSQL(createTableSql);
@@ -169,9 +175,10 @@ public class DBHelper extends SQLiteOpenHelper{
     }
     
     private void bindInsertStatementArgs(Object object) {
+        int inc = autoincrement ? 0 : 1;
         try {
             for (ColumnInfo column : columns) {
-                column.type.bindArg(insertStatement, column.index, column.field.get(object));
+                column.type.bindArg(insertStatement, column.index + inc, column.field.get(object));
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -179,11 +186,11 @@ public class DBHelper extends SQLiteOpenHelper{
     }
     
 	private void initDatabaseInfo() {
-		Table table = claz.getAnnotation(Table.class);
-        tableName = table.name();
         columns = new LinkedList<ColumnInfo>();
+        primaryColumns = new LinkedList<ColumnInfo>();
 
         Field[] fields = claz.getDeclaredFields();
+        int index = 0;
         for (Field field : fields) {
             if (!DBType.isSupportType(field.getType())) continue;
             Column column = field.getAnnotation(Column.class);
@@ -192,29 +199,50 @@ public class DBHelper extends SQLiteOpenHelper{
             field.setAccessible(true);
             ColumnInfo columnInfo = new ColumnInfo(
                     field,
-                    field.getName(),
+                    column.name(),
                     DBType.getDBType(field.getType()),
                     column.index()
             );
             columns.add(columnInfo);
+
+            if(columnInfo.name.equals("")) {
+                columnInfo.name = field.getName();
+            }
+
+            if(columnInfo.index == -1) {
+                columnInfo.index = index;
+                index++;
+            }
+
+            if(column.primary()) {
+                primaryColumns.add(columnInfo);
+            }
         }
         
         Collections.sort(columns, new Comparator<ColumnInfo>() {
-			@Override
-			public int compare(ColumnInfo lhs, ColumnInfo rhs) {
-				return lhs.index - rhs.index;
-			}
-		});
+            @Override
+            public int compare(ColumnInfo lhs, ColumnInfo rhs) {
+                return lhs.index - rhs.index;
+            }
+        });
         
         createTableSql = genCreateTableSql();
         insertSql = genInsertSql();
+        if(debug) {
+            System.out.println("createTableSql = " + createTableSql);
+            System.out.println("insertSql = " + insertSql);
+        }
     }
 
     private String genCreateTableSql() {
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE IF NOT EXISTS ");
         sql.append(tableName);
-        sql.append("(_id integer primary key autoincrement, ");
+        if(autoincrement) {
+            sql.append("(_id integer primary key autoincrement, ");
+        } else {
+            sql.append("(");
+        }
 
         for (ColumnInfo column : columns) {
             sql.append(column.name);
@@ -222,9 +250,19 @@ public class DBHelper extends SQLiteOpenHelper{
             sql.append(column.type.getName());
             sql.append(",");
         }
-        sql.deleteCharAt(sql.length() - 1);
-        sql.append(")");
 
+        if(primaryColumns.size() > 0) {
+            sql.append("primary key(");
+            for (ColumnInfo column : primaryColumns) {
+                sql.append(column.name);
+                sql.append(",");
+            }
+            sql.deleteCharAt(sql.length() - 1);
+            sql.append("))");
+        } else {
+            sql.deleteCharAt(sql.length() - 1);
+            sql.append(")");
+        }
         return sql.toString();
     }
 

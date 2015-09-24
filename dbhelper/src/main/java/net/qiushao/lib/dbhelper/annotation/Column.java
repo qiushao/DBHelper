@@ -8,8 +8,17 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
 	/**
-	 * index start with 1, because index 0 already use _id as primary key.
-	 * @return
+	 * column index in table
 	 */
 	int index() default -1;
+
+    /**
+     * column name, default is field name
+     */
+    String name() default "";
+
+    /**
+     * if this column is primary key
+     */
+    boolean primary() default false;
 }

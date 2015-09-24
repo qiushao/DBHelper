@@ -4,7 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import net.qiushao.lib.dbhelper.annotation.Database;
-import net.qiushao.lib.dbhelper.annotation.Table;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -38,14 +37,17 @@ public class DBFactory {
 
 	public synchronized DBHelper getDBHelper(Class<?> claz, String databaseDir) {
 		Database database = claz.getAnnotation(Database.class);
-		Table table = claz.getAnnotation(Table.class);
-		if (database == null || table == null)
+		if (database == null)
 			return null;
 
-		String dbName = database.name();
-		String tableName = table.name();
-		if (TextUtils.isEmpty(dbName) || TextUtils.isEmpty(tableName))
-			return null;
+		String dbName = database.databaseName();
+		String tableName = database.tableName();
+		if (TextUtils.isEmpty(dbName)) {
+            dbName = context.getPackageName().replaceAll(".", "_");
+		}
+		if(TextUtils.isEmpty(tableName)) {
+            tableName = claz.getSimpleName();
+		}
 
 		if (database.timestamp()) {
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
@@ -63,7 +65,7 @@ public class DBFactory {
         if(databaseDir == null) {
             databaseDir = context.getDatabasePath("dbhelper").getParentFile().getAbsolutePath();
         }
-		DBHelper db = new DBHelper(context, databaseDir, dbName, table.version(), claz);
+		DBHelper db = new DBHelper(context, databaseDir, dbName, tableName, database.tableVersion(), claz);
 		map.put(key, db);
 		return db;
 	}

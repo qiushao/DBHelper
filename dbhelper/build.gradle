@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-version = '1.0.02'
+version = '1.0.3'
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'dbhelper'
@@ -60,3 +60,5 @@ dependencies {
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+//gradlew bintrayUpload

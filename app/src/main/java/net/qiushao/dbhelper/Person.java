@@ -2,24 +2,16 @@ package net.qiushao.dbhelper;
 
 import net.qiushao.lib.dbhelper.annotation.Column;
 import net.qiushao.lib.dbhelper.annotation.Database;
-import net.qiushao.lib.dbhelper.annotation.Table;
 
-/**
- * Created by shaoqiu on 2015-9-22.
- * timestamp default is false, database name will be person.db,
- * if you set true, the database name will be personyy-mm-dd.db.
- * Column index start with `1`, because index 0 used as primary key `_id`.
- */
-@Database(name = "person", timestamp = true)
-@Table(name = "person")
+@Database
 public class Person {
-    @Column(index = 1)
+    @Column
     public String name;
-    @Column(index = 2)
+    @Column
     public int age;
-    @Column(index = 3)
+    @Column
     public boolean marry;
-    @Column(index = 4)
+    @Column
     public double weight;
 
     public Person() {
