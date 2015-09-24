@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+version = '1.0.02'
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'dbhelper'
@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/qiushao/DBHelper'
     gitUrl = 'https://github.com/qiushao/DBHelper.git'
 
-    libraryVersion = '1.0.2'
+    libraryVersion = version
 
     developerId = 'qiushao'
     developerName = 'qiushao'
@@ -24,12 +24,13 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
+
 task makeJar(type: Copy) {
-    delete 'build/libs/dbhelper.jar'
+    delete 'dbhelper-' + version + '.jar'
     from('build/intermediates/bundles/release/')
-    into('build/libs/')
+    into('../downloads/')
     include('classes.jar')
-    rename ('classes.jar', 'dbhelper.jar')
+    rename ('classes.jar', 'dbhelper-' + version + '.jar')
 }
 
 makeJar.dependsOn(build)

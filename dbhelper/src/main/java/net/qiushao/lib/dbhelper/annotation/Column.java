@@ -11,5 +11,5 @@ public @interface Column {
 	 * index start with 1, because index 0 already use _id as primary key.
 	 * @return
 	 */
-	int index();
+	int index() default -1;
 }
