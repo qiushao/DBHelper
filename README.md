@@ -7,94 +7,87 @@ an light weight android orm framwork
 
 ### import library
 #### eclipse
-download the library [dbhelper.jar](https://github.com/qiushao/DBHelper/raw/master/downloads/dbhelper-1.0.02.jar)，put it into your project's `libs` directory.
+download the library [dbhelper-1.0.4.jar](https://github.com/qiushao/DBHelper/raw/master/downloads/dbhelper-1.0.4.jar)，put it into your project's `libs` directory.
 
 #### gradle
 add this dependency in your module build.gradle file
 ```
-compile 'net.qiushao:dbhelper:1.0.2'
+compile 'net.qiushao:dbhelper:1.0.4'
 ```
 
-### example
-
-#### 1. define a java bean with Database Annotation,
-`Note` :this java bean will be a table,dbhelper will add a column `_id` automatic as the primary key.
-
+### base useage
+#### 1. define a java bean annotation by @Database :
 ```
 package net.qiushao.dbhelper;
 
 import net.qiushao.lib.dbhelper.annotation.Column;
 import net.qiushao.lib.dbhelper.annotation.Database;
-import net.qiushao.lib.dbhelper.annotation.Table;
 
-/**
- * Created by shaoqiu on 2015-9-22.
- * timestamp default is false, database name will be person.db,
- * if you set true, the database name will be personyy-mm-dd.db.
- * Column index start with `1`, because index 0 used as primary key `_id`.
- */
-@Database(name = "person", timestamp = true)
-@Table(name = "person")
+@Database
 public class Person {
-    @Column(index = 1)
+    @Column
     public String name;
-    @Column(index = 2)
+    @Column
     public int age;
-    @Column(index = 3)
+    @Column
     public boolean marry;
-    @Column(index = 4)
+    @Column
     public double weight;
 
-    public Person() {
-        name = "";
-        age = 0;
-        marry = false;
-        weight = 0.0;
+    public Person() {}
+    public Person(String name, int age, boolean marry, double weight) {
+        this.name = name;
+        this.age =age;
+        this.marry = marry;
+        this.weight = weight;
     }
 }
+```
+by default database name is package name, table name is class simple name, column name is field name. create table sql may be like this:`CREATE TABLE IF NOT EXISTS Person(name TEXT, age INTEGER, marry INTEGER, weight REAL)`. but column index may be different.
+**NOTE: this java bean must have a no argument constructor**
 
+#### 2. get DBHelper
+```
+DBHelper db = DBFactory.getInstance(context).getDBHelper(Person.class);
 ```
 
-#### 2. insert, delete, update, query
+DBHelper will auto create database at `/data/data/package/database`, and create table.
+
+#### 3. insert, delete, update, query
+- insert
 ```
-DBHelper db;
-//database will be stored at /data/data/package/database
-db = DBFactory.getInstance(this).getDBHelper(Person.class);
-//or you can assign the database dir path
-db = DBFactory.getInstance(this).getDBHelper(Person.class, "/data/database");
-...
-private void insert() {
-        Person person = new Person();
-        person.name = "qiushao";
-        person.age = 26;
-        person.marry = false;
-        person.weight = 54.0;
-        db.insert(person);
+    private void insert() {
+        //insert one object
+        db.insert(new Person("shaoqiu", 26, false, 53.0));
+        
+        //insert a list
+        Collection<Person> persons = new LinkedList<>();
+        for(int i = 0; i < 100; i++) {
+            Person person = new Person("name" + i, i, false, 52.0);
+            persons.add(person);
+        }
+        db.insert(persons);
     }
+```
 
+- delete
+```
     private void delete() {
-        db.delete("name=?", new Object[] {"qiushao"});
+        //delete by condition where name = shaoqiu
+        db.delete("name=?", new Object[] {"shaoqiu"});
+        //delete all data from table Person
         db.clean();
     }
-
-    private void update() {
-        Person person = new Person();
-        person.name = "qiushao";
-        person.age = 28;
-        person.marry = true;
-        person.weight = 55.0;
-        db.update("name=?", new Object[] {"qiushao"}, person);
-    }
-
-    private void query() {
-        Collection<Object> persons = db.query(null, null);
-        for(Object object:persons) {
-            Person person = (Person) object;
-            System.out.println("name = " + person.name);
-            System.out.println("age = " + person.age);
-            System.out.println("marry = " + person.marry);
-            System.out.println("weight = " + person.weight);
-        }
-    }
 ```
 
+- update
+```
+
+```
+
+- query
+```
+
+```
+
+### more 

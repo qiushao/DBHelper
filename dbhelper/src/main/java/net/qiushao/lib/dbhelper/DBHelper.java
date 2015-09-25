@@ -108,6 +108,7 @@ public class DBHelper extends SQLiteOpenHelper{
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
         sql.deleteCharAt(sql.length() - 1);
 
@@ -166,10 +167,13 @@ public class DBHelper extends SQLiteOpenHelper{
             }
         } catch (InstantiationException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return object;
     }
@@ -182,6 +186,7 @@ public class DBHelper extends SQLiteOpenHelper{
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
     

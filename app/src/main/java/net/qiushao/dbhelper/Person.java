@@ -14,10 +14,11 @@ public class Person {
     @Column
     public double weight;
 
-    public Person() {
-        name = "";
-        age = 0;
-        marry = false;
-        weight = 0.0;
+    public Person() {}
+    public Person(String name, int age, boolean marry, double weight) {
+        this.name = name;
+        this.age =age;
+        this.marry = marry;
+        this.weight = weight;
     }
 }
