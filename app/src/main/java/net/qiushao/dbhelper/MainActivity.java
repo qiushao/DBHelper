@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.query).setOnClickListener(this);
 
         db = DBFactory.getInstance(this).getDBHelper(Person.class);
-        db = DBFactory.getInstance(this).getDBHelper(Person.class, "/data/database");
+//        db = DBFactory.getInstance(this).getDBHelper(Person.class, "/data/database");
         myRegisterReceiver();
     }
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //insert a list
         Collection<Object> persons = new LinkedList<>();
-        for(int i = 0; i < 100; i++) {
+        for(int i = 0; i < 5; i++) {
             Person person = new Person("name" + i, i, false, 52.0);
             persons.add(person);
         }

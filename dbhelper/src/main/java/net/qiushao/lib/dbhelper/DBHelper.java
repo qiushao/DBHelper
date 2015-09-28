@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteStatement;
 import android.text.TextUtils;
 
 import net.qiushao.lib.dbhelper.annotation.Column;
-import net.qiushao.lib.dbhelper.annotation.Database;
 
 import java.lang.reflect.Field;
 import java.util.Collection;
@@ -33,9 +32,9 @@ public class DBHelper extends SQLiteOpenHelper{
     private int tableVersion;
     private String createTableSql;
     private String insertSql;
-    private boolean autoincrement;
     private LinkedList<ColumnInfo> columns;
     private LinkedList<ColumnInfo> primaryColumns;
+    private ColumnInfo autoIncrementColumn;
 
 	public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz) {
 		super(new CustomPathDatabaseContext(context, dir), dbName, null, version);
@@ -43,7 +42,6 @@ public class DBHelper extends SQLiteOpenHelper{
         this.tableName = tableName;
         tableVersion = version;
         this.claz = claz;
-        autoincrement = claz.getAnnotation(Database.class).addID();
         initDatabaseInfo();
         db = getWritableDatabase();
         db.execSQL(createTableSql);
@@ -162,6 +160,10 @@ public class DBHelper extends SQLiteOpenHelper{
         Object object = null;
         try {
             object = claz.newInstance();
+            if(autoIncrementColumn != null) {
+                autoIncrementColumn.field.set(object,
+                        autoIncrementColumn.type.getValue(cursor, autoIncrementColumn.index));
+            }
             for (ColumnInfo column : columns) {
                 column.field.set(object, column.type.getValue(cursor, column.index));
             }
@@ -179,7 +181,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
     
     private void bindInsertStatementArgs(Object object) {
-        int inc = autoincrement ? 0 : 1;
+        int inc = autoIncrementColumn == null ? 1 : 0;
         try {
             for (ColumnInfo column : columns) {
                 column.type.bindArg(insertStatement, column.index + inc, column.field.get(object));
@@ -208,7 +210,6 @@ public class DBHelper extends SQLiteOpenHelper{
                     DBType.getDBType(field.getType()),
                     column.index()
             );
-            columns.add(columnInfo);
 
             if(columnInfo.name.equals("")) {
                 columnInfo.name = field.getName();
@@ -222,8 +223,20 @@ public class DBHelper extends SQLiteOpenHelper{
             if(column.primary()) {
                 primaryColumns.add(columnInfo);
             }
+
+            if(column.autoincrementID()) {
+                if(autoIncrementColumn != null ) {
+                    throw new RuntimeException("autoincrementID can't be set more than one times!");
+                }
+                autoIncrementColumn = columnInfo;
+                if(!autoIncrementColumn.type.getName().equals("INTEGER")) {
+                    throw new RuntimeException("autoincrementID column must be integer type");
+                }
+            } else {
+                columns.add(columnInfo);
+            }
         }
-        
+
         Collections.sort(columns, new Comparator<ColumnInfo>() {
             @Override
             public int compare(ColumnInfo lhs, ColumnInfo rhs) {
@@ -243,8 +256,10 @@ public class DBHelper extends SQLiteOpenHelper{
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE IF NOT EXISTS ");
         sql.append(tableName);
-        if(autoincrement) {
-            sql.append("(_id integer primary key autoincrement, ");
+        if(autoIncrementColumn != null) {
+            sql.append("(");
+            sql.append(autoIncrementColumn.name);
+            sql.append(" integer primary key autoincrement, ");
         } else {
             sql.append("(");
         }

@@ -33,10 +33,6 @@ public class DBFactory {
 	}
 
 	public synchronized DBHelper getDBHelper(Class<?> claz) {
-		return getDBHelper(claz, null);
-	}
-
-	public synchronized DBHelper getDBHelper(Class<?> claz, String databaseDir) {
 		Database database = claz.getAnnotation(Database.class);
 		if (database == null)
 			return null;
@@ -59,14 +55,16 @@ public class DBFactory {
 			dbName = dbName + ".db";
 		}
 		
-		String key = dbName + tableName;
-		if (map.containsKey(key)) {
-			return map.get(key);
-		}
-
-        if(databaseDir == null) {
+        String databaseDir = database.databaseDir();
+        if(databaseDir.equals("")) {
             databaseDir = context.getDatabasePath("dbhelper").getParentFile().getAbsolutePath();
         }
+
+        String key = databaseDir + dbName + tableName;
+        if (map.containsKey(key)) {
+            return map.get(key);
+        }
+
 		DBHelper db = new DBHelper(context, databaseDir, dbName, tableName, database.tableVersion(), claz);
 		map.put(key, db);
 		return db;

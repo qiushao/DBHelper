@@ -14,6 +14,8 @@ public @interface Database {
 	 */
     String databaseName() default "";
 
+    String databaseDir() default "";
+
     /**
      * table name, default is class simple name
      */
@@ -23,10 +25,4 @@ public @interface Database {
      * table version
      */
     int tableVersion() default 1;
-
-    /**
-     * if add an column _id as the primary key and autoincrement
-     * if true, column _id's index will be 0, so customer column index should start with 1
-     */
-    boolean addID() default false;
 }

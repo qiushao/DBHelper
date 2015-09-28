@@ -13,5 +13,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Timestamp {
-    String format() default "yy-MM-dd";
+    String format() default "yyyy-MM-dd";
 }

@@ -4,16 +4,23 @@ import net.qiushao.lib.dbhelper.annotation.Column;
 import net.qiushao.lib.dbhelper.annotation.Database;
 import net.qiushao.lib.dbhelper.annotation.Timestamp;
 
-@Database
+@Database(databaseName = "person", databaseDir = "/data/misc/konka/com.konka.systeminfo/databases",
+        tableName = "person", tableVersion = 1)
 @Timestamp
 public class Person {
-    @Column
+    @Column(index = 0, autoincrementID = true)
+    private long _id;
+
+    @Column(index = 1)
     public String name;
-    @Column
+
+    @Column(index = 2)
     public int age;
-    @Column
+
+    @Column(index = 3)
     public boolean marry;
-    @Column
+
+    @Column(index = 4)
     public double weight;
 
     public Person() {}
