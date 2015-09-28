@@ -86,12 +86,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         db.insert(new Person("shaoqiu", 26, false, 53.0));
 
         //insert a list
-        Collection<Person> persons = new LinkedList<>();
+        Collection<Object> persons = new LinkedList<>();
         for(int i = 0; i < 100; i++) {
             Person person = new Person("name" + i, i, false, 52.0);
             persons.add(person);
         }
-        db.insert(persons);
+        db.insertAll(persons);
     }
 
     private void delete() {

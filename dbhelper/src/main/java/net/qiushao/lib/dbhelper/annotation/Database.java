@@ -15,12 +15,6 @@ public @interface Database {
     String databaseName() default "";
 
     /**
-     * if timestamp is true, database name will add timestamp info, for example : person2015-09-24.db
-     * in most case, you no need set timestamp.
-     */
-    boolean timestamp() default false;
-
-    /**
      * table name, default is class simple name
      */
     String tableName() default "";

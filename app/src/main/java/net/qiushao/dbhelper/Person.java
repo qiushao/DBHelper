@@ -2,8 +2,10 @@ package net.qiushao.dbhelper;
 
 import net.qiushao.lib.dbhelper.annotation.Column;
 import net.qiushao.lib.dbhelper.annotation.Database;
+import net.qiushao.lib.dbhelper.annotation.Timestamp;
 
 @Database
+@Timestamp
 public class Person {
     @Column
     public String name;

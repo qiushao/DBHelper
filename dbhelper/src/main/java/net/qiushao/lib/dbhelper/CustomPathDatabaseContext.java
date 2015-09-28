@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 import java.io.File;
 
-public class CustomPathDatabaseContext extends ContextWrapper {
+class CustomPathDatabaseContext extends ContextWrapper {
 
 	private String mDirPath;
 

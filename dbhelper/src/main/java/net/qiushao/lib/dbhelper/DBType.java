@@ -8,7 +8,7 @@ import java.util.HashMap;
 /**
  * Created by shaoqiu on 15-8-29.
  */
-public enum DBType {
+enum DBType {
     INTEGER {
         @Override
         public String getName() {

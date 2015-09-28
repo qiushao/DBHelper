@@ -60,7 +60,7 @@ public class DBHelper extends SQLiteOpenHelper{
         }
     }
 
-    public void insert(Collection<Object> objects) {
+    public void insertAll(Collection<Object> objects) {
         writeLock.lock();
         db.beginTransaction();
         try {

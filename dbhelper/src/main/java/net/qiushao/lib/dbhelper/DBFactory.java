@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import net.qiushao.lib.dbhelper.annotation.Database;
+import net.qiushao.lib.dbhelper.annotation.Timestamp;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,14 +44,15 @@ public class DBFactory {
 		String dbName = database.databaseName();
 		String tableName = database.tableName();
 		if (TextUtils.isEmpty(dbName)) {
-            dbName = context.getPackageName().replaceAll(".", "_");
+            dbName = context.getPackageName().replaceAll("\\.", "_");
 		}
 		if(TextUtils.isEmpty(tableName)) {
             tableName = claz.getSimpleName();
 		}
 
-		if (database.timestamp()) {
-			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+        Timestamp timestamp = claz.getAnnotation(Timestamp.class);
+		if (timestamp != null) {
+			SimpleDateFormat df = new SimpleDateFormat(timestamp.format(), Locale.US);
 			String date = df.format(new Date());
 			dbName = dbName + date + ".db";
 		} else {
