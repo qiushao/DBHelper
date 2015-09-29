@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -24,6 +25,8 @@ public class DBHelper extends SQLiteOpenHelper{
 	private Class<?> claz;
     private SQLiteDatabase db;
     private SQLiteStatement insertStatement;
+    private SQLiteStatement insertOrReplaceStatement;
+    private SQLiteStatement insertOrIgnoreStatement;
     private final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private final Lock writeLock = readWriteLock.writeLock();
 
@@ -32,6 +35,8 @@ public class DBHelper extends SQLiteOpenHelper{
     private int tableVersion;
     private String createTableSql;
     private String insertSql;
+    private String insertOrReplaceSql;
+    private String insertOrIgnoreSql;
     private LinkedList<ColumnInfo> columns;
     private LinkedList<ColumnInfo> primaryColumns;
     private ColumnInfo autoIncrementColumn;
@@ -46,6 +51,8 @@ public class DBHelper extends SQLiteOpenHelper{
         db = getWritableDatabase();
         db.execSQL(createTableSql);
         insertStatement = db.compileStatement(insertSql);
+        insertOrReplaceStatement = db.compileStatement(insertOrReplaceSql);
+        insertOrIgnoreStatement = db.compileStatement(insertOrIgnoreSql);
 	}
 	
 	public void insert(Object object) {
@@ -53,6 +60,38 @@ public class DBHelper extends SQLiteOpenHelper{
         try {
             bindInsertStatementArgs(object);
             insertStatement.executeInsert();
+        } finally {
+            writeLock.unlock();
+        }
+    }
+
+    /**
+     * this method requires your table have a primary key,
+     * if primary key not in database, that will insert object into database,
+     * else update database with new value
+     * @param object
+     */
+    public void insertOrReplace(Object object) {
+        writeLock.lock();
+        try {
+            bindInsertStatementArgs(object);
+            insertOrReplaceStatement.execute();
+        } finally {
+            writeLock.unlock();
+        }
+    }
+
+    /**
+     * this method requires your table have a primary key,
+     * if primary key not in database, that will insert object into database,
+     * else this operate will be ignore
+     * @param object
+     */
+    public void insertOrIgnore(Object object) {
+        writeLock.lock();
+        try {
+            bindInsertStatementArgs(object);
+            insertOrIgnoreStatement.execute();
         } finally {
             writeLock.unlock();
         }
@@ -87,7 +126,7 @@ public class DBHelper extends SQLiteOpenHelper{
     public void clean() {
         db.execSQL("delete from " + tableName);
     }
-    
+
     public void update(String whereClause, Object[] whereArgs, Object object) {
         StringBuilder sql = new StringBuilder();
         sql.append("update ");
@@ -244,15 +283,15 @@ public class DBHelper extends SQLiteOpenHelper{
             }
         });
         
-        createTableSql = genCreateTableSql();
-        insertSql = genInsertSql();
+        genCreateTableSql();
+        genInsertSql();
         if(debug) {
             System.out.println("createTableSql = " + createTableSql);
             System.out.println("insertSql = " + insertSql);
         }
     }
 
-    private String genCreateTableSql() {
+    private void genCreateTableSql() {
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE IF NOT EXISTS ");
         sql.append(tableName);
@@ -283,12 +322,13 @@ public class DBHelper extends SQLiteOpenHelper{
             sql.deleteCharAt(sql.length() - 1);
             sql.append(")");
         }
-        return sql.toString();
+        createTableSql = sql.toString();
     }
 
-    private String genInsertSql() {
+    private void genInsertSql() {
         StringBuilder sql = new StringBuilder();
-        sql.append("INSERT INTO ");
+
+        sql.append("INSERT OR REPLACE INTO ");
         sql.append(tableName);
         sql.append("(");
 
@@ -307,7 +347,9 @@ public class DBHelper extends SQLiteOpenHelper{
         values.append(")");
 
         sql.append(values);
-        return sql.toString();
+        insertOrReplaceSql = sql.toString();
+        insertOrIgnoreSql = insertOrReplaceSql.replaceFirst("OR REPLACE ", "OR IGNORE ");
+        insertSql =  insertOrReplaceSql.replaceFirst("OR REPLACE ", "");
     }
 
     public String getDBName() {
