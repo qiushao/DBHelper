@@ -14,7 +14,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.Objects;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -58,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper{
 	public void insert(Object object) {
         writeLock.lock();
         try {
-            bindInsertStatementArgs(object);
+            bindInsertStatementArgs(insertStatement, object);
             insertStatement.executeInsert();
         } finally {
             writeLock.unlock();
@@ -74,7 +73,7 @@ public class DBHelper extends SQLiteOpenHelper{
     public void insertOrReplace(Object object) {
         writeLock.lock();
         try {
-            bindInsertStatementArgs(object);
+            bindInsertStatementArgs(insertOrReplaceStatement, object);
             insertOrReplaceStatement.execute();
         } finally {
             writeLock.unlock();
@@ -90,7 +89,7 @@ public class DBHelper extends SQLiteOpenHelper{
     public void insertOrIgnore(Object object) {
         writeLock.lock();
         try {
-            bindInsertStatementArgs(object);
+            bindInsertStatementArgs(insertOrIgnoreStatement, object);
             insertOrIgnoreStatement.execute();
         } finally {
             writeLock.unlock();
@@ -102,7 +101,7 @@ public class DBHelper extends SQLiteOpenHelper{
         db.beginTransaction();
         try {
             for (Object object : objects) {
-                bindInsertStatementArgs(object);
+                bindInsertStatementArgs(insertStatement, object);
                 insertStatement.executeInsert();
             }
             db.setTransactionSuccessful();
@@ -127,40 +126,6 @@ public class DBHelper extends SQLiteOpenHelper{
         db.execSQL("delete from " + tableName);
     }
 
-    public void update(String whereClause, Object[] whereArgs, Object object) {
-        StringBuilder sql = new StringBuilder();
-        sql.append("update ");
-        sql.append(tableName);
-        sql.append(" set ");
-
-        int bindArgsSize = whereArgs.length + columns.size();
-        Object[] bindArgs = new Object[bindArgsSize];
-        int index = 0;
-
-        try {
-            for (ColumnInfo column : columns) {
-                sql.append(column.name);
-                sql.append("=?,");
-                bindArgs[index++] = column.field.get(object);
-            }
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-        sql.deleteCharAt(sql.length() - 1);
-
-        if (!TextUtils.isEmpty(whereClause)) {
-            sql.append(" where ");
-            sql.append(whereClause);
-        }
-
-        for (Object arg : whereArgs) {
-            bindArgs[index++] = arg;
-        }
-
-        db.execSQL(sql.toString(), bindArgs);
-    }
-
     public Collection<Object> query(String whereClause, String[] args) {
         StringBuilder sql = new StringBuilder();
         sql.append("select * from ");
@@ -173,12 +138,46 @@ public class DBHelper extends SQLiteOpenHelper{
         return cursorToObjects(cursor);
     }
 
-    public void exeSql(String sql, Object[] args) {
-        db.execSQL(sql, args);
+    /**
+     *
+     * @param args
+     */
+    public Object queryByPrimary(String[] args) {
+        if(primaryColumns.size() == 0) {
+            throw new RuntimeException("you should specify the primary key");
+        }
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * from ");
+        sql.append(tableName);
+        sql.append(" where ");
+
+        boolean firstCondition = true;
+        for(ColumnInfo column : primaryColumns) {
+            if(firstCondition) {
+                firstCondition = false;
+                sql.append(column.name);
+                sql.append("=?");
+            } else {
+                sql.append(" and ");
+                sql.append(column.name);
+                sql.append("=?");
+            }
+        }
+
+        Cursor cursor = db.rawQuery(sql.toString(), args);
+        Collection<Object> objects = cursorToObjects(cursor);
+        for(Object object : objects) {
+            return object;
+        }
+        return null;
     }
 
     public Cursor rawQuery(String sql, String[] args) {
         return db.rawQuery(sql, args);
+    }
+
+    public void exeSql(String sql, Object[] args) {
+        db.execSQL(sql, args);
     }
 
     private Collection<Object> cursorToObjects(Cursor cursor) {
@@ -219,11 +218,11 @@ public class DBHelper extends SQLiteOpenHelper{
         return object;
     }
     
-    private void bindInsertStatementArgs(Object object) {
+    private void bindInsertStatementArgs(SQLiteStatement statement, Object object) {
         int inc = autoIncrementColumn == null ? 1 : 0;
         try {
             for (ColumnInfo column : columns) {
-                column.type.bindArg(insertStatement, column.index + inc, column.field.get(object));
+                column.type.bindArg(statement, column.index + inc, column.field.get(object));
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
