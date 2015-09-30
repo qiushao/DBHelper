@@ -16,13 +16,20 @@ import java.util.LinkedList;
 public class ApplicationTest extends ApplicationTestCase<Application> {
     private static final String TAG = "dbhelper";
 
+    DBHelper<Person> db;
+
     public ApplicationTest() {
         super(Application.class);
     }
 
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
+    }
+
     public void testInsert() {
         Log.i(TAG, "test insert start");
-        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
         db.clean();
 
         String id = "1";
@@ -32,9 +39,8 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         float height = 165.0f;
         double weight = 53.25;
         db.insert(new Person(id, name, age, marry, height, weight));
-        Collection<Object> pesons = db.query(null, null);
-        for(Object object : pesons) {
-            Person person = (Person) object;
+        Collection<Person> persons = db.query(null, null);
+        for(Person person : persons) {
             assertEquals(person.id, id);
             assertEquals(person.name, name);
             assertEquals(person.age, age);
@@ -48,10 +54,9 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
     public void testInsertAll() {
         Log.i(TAG, "test insertAll start");
-        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
         db.clean();
 
-        Collection<Object> persons = new LinkedList<>();
+        Collection<Person> persons = new LinkedList<>();
         int count = 1000;
         for(int i = 0; i < count; i++) {
             Person person = new Person("id" + i, "name" + i, i, false, 168.0f, 54.00);
@@ -66,8 +71,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         persons = db.query(null, null);
         assertEquals(persons.size(), count);
 
-        for(Object object : persons) {
-            Person person = (Person) object;
+        for(Person person : persons) {
             assertEquals(person.id, "id" + person.age);
             assertEquals(person.name, "name" + person.age);
             assertEquals(person.marry, false);
@@ -80,7 +84,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
     public void testInsertOrIgnore() {
         Log.i(TAG, "test insertOrIgnore start");
-        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
         db.clean();
 
         String id = "1";
@@ -96,11 +99,10 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         weight = 56.00;
         db.insertOrIgnore(new Person(id, name, age, marry, height, weight));
 
-        Collection<Object> persons = db.query(null, null);
+        Collection<Person> persons = db.query(null, null);
         assertEquals(persons.size(), 1);
 
-        for(Object object : persons) {
-            Person person = (Person) object;
+        for(Person person : persons) {
             assertEquals(person.marry, false);
             assertEquals(person.age, 26);
             assertEquals(person.weight, 53.25);
@@ -111,7 +113,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public void testInsertOrReplace() {
         Log.i(TAG, "test insertOrReplace start");
 
-        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
         db.clean();
 
         String id = "1";
@@ -127,11 +128,10 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         weight = 56.00;
         db.insertOrReplace(new Person(id, name, age, marry, height, weight));
 
-        Collection<Object> persons = db.query(null, null);
+        Collection<Person> persons = db.query(null, null);
         assertEquals(persons.size(), 1);
 
-        for(Object object : persons) {
-            Person person = (Person) object;
+        for(Person person : persons) {
             assertEquals(person.marry, marry);
             assertEquals(person.age, age);
             assertEquals(person.weight, weight);
@@ -144,7 +144,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public void testDelete() {
         Log.i(TAG, "test delete start");
 
-        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
         db.clean();
 
         db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
@@ -154,7 +153,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         db.delete("id=?", new String[]{"2"});
         db.delete("name=? and age=?", new String[]{"junday", String.valueOf(23)});
 
-        Collection<Object> objects = db.query(null, null);
+        Collection<Person> objects = db.query(null, null);
         assertEquals(objects.size(), 1);
 
         Log.i(TAG, "test delete pass");
@@ -163,7 +162,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public void testClean() {
         Log.i(TAG, "test clean start");
 
-        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
         db.clean();
 
         db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
@@ -172,7 +170,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
         db.clean();
 
-        Collection<Object> objects = db.query(null, null);
+        Collection<Person> objects = db.query(null, null);
         assertEquals(objects.size(), 0);
 
         Log.i(TAG, "test clean pass");
@@ -181,7 +179,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public void testQuery() {
         Log.i(TAG, "test query start");
 
-        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Person.class);
         db.clean();
 
         db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
@@ -190,7 +187,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
         db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
 
-        Collection<Object> objects = db.query("name=?", new String[] {"qiushao"});
+        Collection<Person> objects = db.query("name=?", new String[] {"qiushao"});
         assertEquals(objects.size(), 3);
 
         objects = db.query("age>?", new String[] {String.valueOf(23)});
@@ -199,4 +196,25 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         Log.i(TAG, "test query end");
     }
 
+    public void testQueryByPrimary() {
+        Log.i(TAG, "test query by primary start");
+
+        db.clean();
+
+        db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
+        db.insert(new Person("2", "qiushao", 26, false, 165.0f, 53.00));
+        db.insert(new Person("3", "junday", 23, false, 165.0f, 52.00));
+        db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
+        db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
+
+        Person person = db.queryByPrimary(new String[]{"3"});
+        assertEquals(person.id, "3");
+        assertEquals(person.name, "junday");
+        assertEquals(person.age, 23);
+        assertEquals(person.marry, false);
+        assertEquals(person.height, 165.0f);
+        assertEquals(person.weight, 52.00);
+
+        Log.i(TAG, "test query by primary end");
+    }
 }

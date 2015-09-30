@@ -17,7 +17,7 @@ import java.util.LinkedList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class DBHelper extends SQLiteOpenHelper{
+public class DBHelper<T> extends SQLiteOpenHelper{
 
     private static boolean debug = true;
 
@@ -54,7 +54,7 @@ public class DBHelper extends SQLiteOpenHelper{
         insertOrIgnoreStatement = db.compileStatement(insertOrIgnoreSql);
 	}
 	
-	public void insert(Object object) {
+	public void insert(T object) {
         writeLock.lock();
         try {
             bindInsertStatementArgs(insertStatement, object);
@@ -70,7 +70,7 @@ public class DBHelper extends SQLiteOpenHelper{
      * else update database with new value
      * @param object
      */
-    public void insertOrReplace(Object object) {
+    public void insertOrReplace(T object) {
         writeLock.lock();
         try {
             bindInsertStatementArgs(insertOrReplaceStatement, object);
@@ -86,7 +86,7 @@ public class DBHelper extends SQLiteOpenHelper{
      * else this operate will be ignore
      * @param object
      */
-    public void insertOrIgnore(Object object) {
+    public void insertOrIgnore(T object) {
         writeLock.lock();
         try {
             bindInsertStatementArgs(insertOrIgnoreStatement, object);
@@ -96,11 +96,11 @@ public class DBHelper extends SQLiteOpenHelper{
         }
     }
 
-    public void insertAll(Collection<Object> objects) {
+    public void insertAll(Collection<T> objects) {
         writeLock.lock();
         db.beginTransaction();
         try {
-            for (Object object : objects) {
+            for (T object : objects) {
                 bindInsertStatementArgs(insertStatement, object);
                 insertStatement.executeInsert();
             }
@@ -126,7 +126,7 @@ public class DBHelper extends SQLiteOpenHelper{
         db.execSQL("delete from " + tableName);
     }
 
-    public Collection<Object> query(String whereClause, String[] args) {
+    public Collection<T> query(String whereClause, String[] args) {
         StringBuilder sql = new StringBuilder();
         sql.append("select * from ");
         sql.append(tableName);
@@ -142,7 +142,7 @@ public class DBHelper extends SQLiteOpenHelper{
      *
      * @param args
      */
-    public Object queryByPrimary(String[] args) {
+    public T queryByPrimary(String[] args) {
         if(primaryColumns.size() == 0) {
             throw new RuntimeException("you should specify the primary key");
         }
@@ -165,8 +165,8 @@ public class DBHelper extends SQLiteOpenHelper{
         }
 
         Cursor cursor = db.rawQuery(sql.toString(), args);
-        Collection<Object> objects = cursorToObjects(cursor);
-        for(Object object : objects) {
+        Collection<T> objects = cursorToObjects(cursor);
+        for(T object : objects) {
             return object;
         }
         return null;
@@ -180,11 +180,11 @@ public class DBHelper extends SQLiteOpenHelper{
         db.execSQL(sql, args);
     }
 
-    private Collection<Object> cursorToObjects(Cursor cursor) {
-        LinkedList<Object> list = new LinkedList<Object>();
+    private Collection<T> cursorToObjects(Cursor cursor) {
+        LinkedList<T> list = new LinkedList<>();
         if (cursor != null) {
             while (cursor.moveToNext()) {
-                Object object = newInstance(cursor);
+                T object = newInstance(cursor);
                 if (object != null) {
                     list.add(object);
                 }
@@ -194,7 +194,7 @@ public class DBHelper extends SQLiteOpenHelper{
         return list;
     }
     
-    private Object newInstance(Cursor cursor) {
+    private T newInstance(Cursor cursor) {
         Object object = null;
         try {
             object = claz.newInstance();
@@ -215,7 +215,7 @@ public class DBHelper extends SQLiteOpenHelper{
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-        return object;
+        return (T) object;
     }
     
     private void bindInsertStatementArgs(SQLiteStatement statement, Object object) {

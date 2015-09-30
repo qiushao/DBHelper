@@ -32,7 +32,7 @@ public class DBFactory {
 		map = new ConcurrentHashMap<String, DBHelper>();
 	}
 
-	public synchronized DBHelper getDBHelper(Class<?> claz) {
+	public synchronized <T> DBHelper<T> getDBHelper(Class<T> claz) {
 		Database database = claz.getAnnotation(Database.class);
 		if (database == null)
 			return null;
@@ -65,7 +65,7 @@ public class DBFactory {
             return map.get(key);
         }
 
-		DBHelper db = new DBHelper(context, databaseDir, dbName, tableName, database.tableVersion(), claz);
+		DBHelper<T> db = new DBHelper<>(context, databaseDir, dbName, tableName, database.tableVersion(), claz);
 		map.put(key, db);
 		return db;
 	}

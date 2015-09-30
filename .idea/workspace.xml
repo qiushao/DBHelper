@@ -11,13 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="070119cc-c075-4a95-9764-c3dcc0330cee" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\appcompat_v7_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\design_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\support_annotations_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\support_v4_23_0_1.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" afterPath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" afterPath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" afterPath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/dbhelper.iml" afterPath="$PROJECT_DIR$/dbhelper/dbhelper.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DBHelper.iws" />
@@ -48,35 +44,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApplicationTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApplicationTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0597014">
-              <caret line="201" column="1" selection-start-line="201" selection-start-column="1" selection-end-line="201" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
               <folding>
-                <element signature="e#524#525#0" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#550#551#0" expanded="true" />
+                <element signature="e#590#591#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Instrumentation.java" pinned="false" current-in-tab="false">
-        <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/app/Instrumentation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1701" column="0" selection-start-line="1701" selection-start-column="0" selection-end-line="1701" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstrumentationTestRunner.java" pinned="false" current-in-tab="false">
-        <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/test/InstrumentationTestRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="567" column="59" selection-start-line="567" selection-start-column="59" selection-end-line="567" selection-end-column="59" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -85,47 +61,34 @@
         <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="149" column="37" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.39506173">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
               <folding>
-                <element signature="e#4077#4078#0" expanded="true" />
-                <element signature="e#4131#4132#0" expanded="true" />
-                <element signature="e#5605#5606#0" expanded="true" />
-                <element signature="e#5650#5651#0" expanded="true" />
-                <element signature="e#5703#5704#0" expanded="true" />
-                <element signature="e#5740#5741#0" expanded="true" />
-                <element signature="e#5855#5863#0" expanded="true" />
-                <element signature="e#9103#9290#0" expanded="true" />
-                <element signature="e#9289#9290#0" expanded="true" />
-                <element signature="e#11435#11436#0" expanded="true" />
-                <element signature="e#11464#11465#0" expanded="true" />
-                <element signature="e#11500#11501#0" expanded="true" />
-                <element signature="e#11535#11536#0" expanded="true" />
-                <element signature="e#11571#11572#0" expanded="true" />
-                <element signature="e#11603#11604#0" expanded="true" />
-                <element signature="e#11658#11659#0" expanded="true" />
-                <element signature="e#11691#11692#0" expanded="true" />
+                <element signature="e#4055#4056#0" expanded="true" />
+                <element signature="e#4109#4110#0" expanded="true" />
+                <element signature="e#5563#5564#0" expanded="true" />
+                <element signature="e#5608#5609#0" expanded="true" />
+                <element signature="e#5661#5662#0" expanded="true" />
+                <element signature="e#5698#5699#0" expanded="true" />
+                <element signature="e#9039#9226#0" expanded="true" />
+                <element signature="e#9225#9226#0" expanded="true" />
+                <element signature="e#11371#11372#0" expanded="true" />
+                <element signature="e#11400#11401#0" expanded="true" />
+                <element signature="e#11436#11437#0" expanded="true" />
+                <element signature="e#11471#11472#0" expanded="true" />
+                <element signature="e#11507#11508#0" expanded="true" />
+                <element signature="e#11539#11540#0" expanded="true" />
+                <element signature="e#11594#11595#0" expanded="true" />
+                <element signature="e#11627#11628#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2515,7 +2478,6 @@
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Database.java" />
-        <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Timestamp.java" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -2523,6 +2485,7 @@
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Person.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
+        <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" />
       </list>
     </option>
   </component>
@@ -2700,11 +2663,13 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="5.1" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
-  <component name="RunManager" selected="Android Tests.All Tests">
-    <configuration default="false" name="All Tests" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Android Tests.ApplicationTest">
+    <configuration default="false" name="ApplicationTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="dbhelper" />
-      <option name="TESTING_TYPE" value="0" />
+      <option name="TESTING_TYPE" value="2" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="net.qiushao.lib.ApplicationTest" />
@@ -2945,12 +2910,12 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Android Application.app" />
-      <item index="1" class="java.lang.String" itemvalue="Android Tests.All Tests" />
+      <item index="1" class="java.lang.String" itemvalue="Android Tests.ApplicationTest" />
       <item index="2" class="java.lang.String" itemvalue="Android Tests.test()" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Android Tests.All Tests" />
+        <item index="0" class="java.lang.String" itemvalue="Android Tests.ApplicationTest" />
         <item index="1" class="java.lang.String" itemvalue="Android Tests.test()" />
       </list>
     </recent_temporary>
@@ -2990,7 +2955,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14163822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5904437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37883958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25938568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -3052,23 +3017,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#5605#5606#0" expanded="true" />
-            <element signature="e#5650#5651#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
-            <element signature="e#5855#5863#0" expanded="true" />
-            <element signature="e#9103#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#11435#11436#0" expanded="true" />
-            <element signature="e#11464#11465#0" expanded="true" />
-            <element signature="e#11500#11501#0" expanded="true" />
-            <element signature="e#11535#11536#0" expanded="true" />
-            <element signature="e#11571#11572#0" expanded="true" />
-            <element signature="e#11603#11604#0" expanded="true" />
-            <element signature="e#11658#11659#0" expanded="true" />
-            <element signature="e#11691#11692#0" expanded="true" />
+            <element signature="e#4055#4056#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5608#5609#0" expanded="true" />
+            <element signature="e#5661#5662#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+            <element signature="e#9039#9226#0" expanded="true" />
+            <element signature="e#9225#9226#0" expanded="true" />
+            <element signature="e#11371#11372#0" expanded="true" />
+            <element signature="e#11400#11401#0" expanded="true" />
+            <element signature="e#11436#11437#0" expanded="true" />
+            <element signature="e#11471#11472#0" expanded="true" />
+            <element signature="e#11507#11508#0" expanded="true" />
+            <element signature="e#11539#11540#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11627#11628#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3110,23 +3074,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="187" column="27" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
           <folding>
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#5605#5606#0" expanded="true" />
-            <element signature="e#5650#5651#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
-            <element signature="e#5855#5863#0" expanded="true" />
-            <element signature="e#9103#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#11435#11436#0" expanded="true" />
-            <element signature="e#11464#11465#0" expanded="true" />
-            <element signature="e#11500#11501#0" expanded="true" />
-            <element signature="e#11535#11536#0" expanded="true" />
-            <element signature="e#11571#11572#0" expanded="true" />
-            <element signature="e#11603#11604#0" expanded="true" />
-            <element signature="e#11658#11659#0" expanded="true" />
-            <element signature="e#11691#11692#0" expanded="true" />
+            <element signature="e#4055#4056#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5608#5609#0" expanded="true" />
+            <element signature="e#5661#5662#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+            <element signature="e#9039#9226#0" expanded="true" />
+            <element signature="e#9225#9226#0" expanded="true" />
+            <element signature="e#11371#11372#0" expanded="true" />
+            <element signature="e#11400#11401#0" expanded="true" />
+            <element signature="e#11436#11437#0" expanded="true" />
+            <element signature="e#11471#11472#0" expanded="true" />
+            <element signature="e#11507#11508#0" expanded="true" />
+            <element signature="e#11539#11540#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11627#11628#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3144,23 +3107,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#5605#5606#0" expanded="true" />
-            <element signature="e#5650#5651#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
-            <element signature="e#5855#5863#0" expanded="true" />
-            <element signature="e#9103#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#11435#11436#0" expanded="true" />
-            <element signature="e#11464#11465#0" expanded="true" />
-            <element signature="e#11500#11501#0" expanded="true" />
-            <element signature="e#11535#11536#0" expanded="true" />
-            <element signature="e#11571#11572#0" expanded="true" />
-            <element signature="e#11603#11604#0" expanded="true" />
-            <element signature="e#11658#11659#0" expanded="true" />
-            <element signature="e#11691#11692#0" expanded="true" />
+            <element signature="e#4055#4056#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5608#5609#0" expanded="true" />
+            <element signature="e#5661#5662#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+            <element signature="e#9039#9226#0" expanded="true" />
+            <element signature="e#9225#9226#0" expanded="true" />
+            <element signature="e#11371#11372#0" expanded="true" />
+            <element signature="e#11400#11401#0" expanded="true" />
+            <element signature="e#11436#11437#0" expanded="true" />
+            <element signature="e#11471#11472#0" expanded="true" />
+            <element signature="e#11507#11508#0" expanded="true" />
+            <element signature="e#11539#11540#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11627#11628#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3184,23 +3146,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding>
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#5605#5606#0" expanded="true" />
-            <element signature="e#5650#5651#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
-            <element signature="e#5855#5863#0" expanded="true" />
-            <element signature="e#9103#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#11435#11436#0" expanded="true" />
-            <element signature="e#11464#11465#0" expanded="true" />
-            <element signature="e#11500#11501#0" expanded="true" />
-            <element signature="e#11535#11536#0" expanded="true" />
-            <element signature="e#11571#11572#0" expanded="true" />
-            <element signature="e#11603#11604#0" expanded="true" />
-            <element signature="e#11658#11659#0" expanded="true" />
-            <element signature="e#11691#11692#0" expanded="true" />
+            <element signature="e#4055#4056#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5608#5609#0" expanded="true" />
+            <element signature="e#5661#5662#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+            <element signature="e#9039#9226#0" expanded="true" />
+            <element signature="e#9225#9226#0" expanded="true" />
+            <element signature="e#11371#11372#0" expanded="true" />
+            <element signature="e#11400#11401#0" expanded="true" />
+            <element signature="e#11436#11437#0" expanded="true" />
+            <element signature="e#11471#11472#0" expanded="true" />
+            <element signature="e#11507#11508#0" expanded="true" />
+            <element signature="e#11539#11540#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11627#11628#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3239,23 +3200,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding>
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#5605#5606#0" expanded="true" />
-            <element signature="e#5650#5651#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
-            <element signature="e#5855#5863#0" expanded="true" />
-            <element signature="e#9103#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#11435#11436#0" expanded="true" />
-            <element signature="e#11464#11465#0" expanded="true" />
-            <element signature="e#11500#11501#0" expanded="true" />
-            <element signature="e#11535#11536#0" expanded="true" />
-            <element signature="e#11571#11572#0" expanded="true" />
-            <element signature="e#11603#11604#0" expanded="true" />
-            <element signature="e#11658#11659#0" expanded="true" />
-            <element signature="e#11691#11692#0" expanded="true" />
+            <element signature="e#4055#4056#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5608#5609#0" expanded="true" />
+            <element signature="e#5661#5662#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+            <element signature="e#9039#9226#0" expanded="true" />
+            <element signature="e#9225#9226#0" expanded="true" />
+            <element signature="e#11371#11372#0" expanded="true" />
+            <element signature="e#11400#11401#0" expanded="true" />
+            <element signature="e#11436#11437#0" expanded="true" />
+            <element signature="e#11471#11472#0" expanded="true" />
+            <element signature="e#11507#11508#0" expanded="true" />
+            <element signature="e#11539#11540#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11627#11628#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3457,14 +3417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/app/Instrumentation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3515,39 +3467,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="149" column="37" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
           <folding>
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#5605#5606#0" expanded="true" />
-            <element signature="e#5650#5651#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5740#5741#0" expanded="true" />
-            <element signature="e#5855#5863#0" expanded="true" />
-            <element signature="e#9103#9290#0" expanded="true" />
-            <element signature="e#9289#9290#0" expanded="true" />
-            <element signature="e#11435#11436#0" expanded="true" />
-            <element signature="e#11464#11465#0" expanded="true" />
-            <element signature="e#11500#11501#0" expanded="true" />
-            <element signature="e#11535#11536#0" expanded="true" />
-            <element signature="e#11571#11572#0" expanded="true" />
-            <element signature="e#11603#11604#0" expanded="true" />
-            <element signature="e#11658#11659#0" expanded="true" />
-            <element signature="e#11691#11692#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0597014">
-          <caret line="201" column="1" selection-start-line="201" selection-start-column="1" selection-end-line="201" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39506173">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding>
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#4055#4056#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5608#5609#0" expanded="true" />
+            <element signature="e#5661#5662#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+            <element signature="e#9039#9226#0" expanded="true" />
+            <element signature="e#9225#9226#0" expanded="true" />
+            <element signature="e#11371#11372#0" expanded="true" />
+            <element signature="e#11400#11401#0" expanded="true" />
+            <element signature="e#11436#11437#0" expanded="true" />
+            <element signature="e#11471#11472#0" expanded="true" />
+            <element signature="e#11507#11508#0" expanded="true" />
+            <element signature="e#11539#11540#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11627#11628#0" expanded="true" />
           </folding>
         </state>
       </provider>
