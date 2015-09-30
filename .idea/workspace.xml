@@ -11,9 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="070119cc-c075-4a95-9764-c3dcc0330cee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" afterPath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" afterPath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" afterPath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\appcompat_v7_23_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\design_23_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\support_annotations_23_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\support_v4_23_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.02.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.5.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/build.gradle" afterPath="$PROJECT_DIR$/dbhelper/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/dbhelper.iml" afterPath="$PROJECT_DIR$/dbhelper/dbhelper.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DBHelper.iws" />
@@ -57,6 +65,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DBFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39506173">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
               <folding>
                 <element signature="e#4055#4056#0" expanded="true" />
@@ -90,6 +108,16 @@
                 <element signature="e#11594#11595#0" expanded="true" />
                 <element signature="e#11627#11628#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.035906643">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -580,9 +608,9 @@
                 <option name="name" value="prepareDebugUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare net.qiushao:dbhelper:1.0.5" />
+                <option name="description" value="Prepare net.qiushao:dbhelper:1.0.6" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareNetQiushaoDbhelper105Library" />
+                <option name="name" value="prepareNetQiushaoDbhelper106Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1206,9 +1234,9 @@
                 <option name="name" value="prepareDebugUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare net.qiushao:dbhelper:1.0.5" />
+                <option name="description" value="Prepare net.qiushao:dbhelper:1.0.6" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareNetQiushaoDbhelper105Library" />
+                <option name="name" value="prepareNetQiushaoDbhelper106Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1895,7 +1923,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="5772314754701" />
-        <entry key="D:\project\android-studio\DBHelper" value="5773161498427" />
+        <entry key="D:\project\android-studio\DBHelper" value="5773191006249" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2476,16 +2504,16 @@
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBType.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/ColumnInfo.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Database.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Timestamp.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/dbhelper/build.gradle" />
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Person.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" />
+        <option value="$PROJECT_DIR$/dbhelper/build.gradle" />
       </list>
     </option>
   </component>
@@ -2955,7 +2983,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14163822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5904437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25938568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25938568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -3375,26 +3403,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8563734">
           <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71813285">
-          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -3488,7 +3500,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39506173">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding>
             <element signature="e#4055#4056#0" expanded="true" />
@@ -3508,6 +3520,22 @@
             <element signature="e#11594#11595#0" expanded="true" />
             <element signature="e#11627#11628#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.035906643">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

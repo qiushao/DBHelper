@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         person.age = 28;
         person.marry = true;
         person.weight = 55.0;
-        db.update("name=?", new Object[] {"qiushao"}, person);
+        db.insertOrReplace(person);
     }
 
     private void query() {
