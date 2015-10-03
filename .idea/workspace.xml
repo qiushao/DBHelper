@@ -11,16 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="070119cc-c075-4a95-9764-c3dcc0330cee" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\appcompat_v7_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\design_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\support_annotations_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\.idea\libraries\support_v4_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.02.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\project\android-studio\DBHelper\downloads\dbhelper-1.0.5.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" afterPath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java" afterPath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" afterPath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/build.gradle" afterPath="$PROJECT_DIR$/dbhelper/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/dbhelper.iml" afterPath="$PROJECT_DIR$/dbhelper/dbhelper.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -52,72 +47,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApplicationTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ApplicationTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+            <state vertical-scroll-proportion="9.30581">
+              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
               <folding>
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#622#623#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-              <folding>
-                <element signature="e#4055#4056#0" expanded="true" />
-                <element signature="e#4109#4110#0" expanded="true" />
-                <element signature="e#5563#5564#0" expanded="true" />
-                <element signature="e#5608#5609#0" expanded="true" />
-                <element signature="e#5661#5662#0" expanded="true" />
-                <element signature="e#5698#5699#0" expanded="true" />
-                <element signature="e#9039#9226#0" expanded="true" />
-                <element signature="e#9225#9226#0" expanded="true" />
-                <element signature="e#11371#11372#0" expanded="true" />
-                <element signature="e#11400#11401#0" expanded="true" />
-                <element signature="e#11436#11437#0" expanded="true" />
-                <element signature="e#11471#11472#0" expanded="true" />
-                <element signature="e#11507#11508#0" expanded="true" />
-                <element signature="e#11539#11540#0" expanded="true" />
-                <element signature="e#11594#11595#0" expanded="true" />
-                <element signature="e#11627#11628#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.035906643">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -127,8 +65,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -1922,7 +1860,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5772314754701" />
+        <entry key="$PROJECT_DIR$" value="5772574859897" />
         <entry key="D:\project\android-studio\DBHelper" value="5773191006249" />
       </map>
     </option>
@@ -2141,10 +2079,10 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3-sources.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
-                            <option value="D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.0.1/appcompat-v7-23.0.1.aar" />
-                            <option value="D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/design/23.0.1/design-23.0.1.aar" />
-                            <option value="D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-v4/23.0.1/support-v4-23.0.1.aar" />
-                            <option value="D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar" />
+                            <option value="$USER_HOME$/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.0.1/appcompat-v7-23.0.1.aar" />
+                            <option value="$USER_HOME$/Android/sdk/extras/android/m2repository/com/android/support/design/23.0.1/design-23.0.1.aar" />
+                            <option value="$USER_HOME$/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.0.1/support-v4-23.0.1.aar" />
+                            <option value="$USER_HOME$/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar" />
                           </list>
                         </option>
                         <option name="path" value="$PROJECT_DIR$/app" />
@@ -2370,117 +2308,117 @@
               <option name="name" value="app" />
               <option name="projectBuildClasspath">
                 <list>
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/cli" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-native" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-scala" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/testing-native" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ivy" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ide" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/osgi" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources-s3" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/open-api" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/jacoco" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/tooling-api-builders" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/javascript" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-play" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/wrapper" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources-sftp" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/reporting" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/diagnostics" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-jvm" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/base-services-groovy" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/model-groovy" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/publish" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/messaging" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ear" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/maven" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources-http" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/build-comparison" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/launcher" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/core" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/code-quality" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/plugins" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ide-native" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-native" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/plugin-use" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/native" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/announce" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/antlr" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/base-services" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/base-services-groovy" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/build-comparison" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/build-init" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/cli" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/code-quality" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/core" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/dependency-management" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/diagnostics" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ear" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ide" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ide-native" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/internal-integ-testing" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/internal-testing" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ivy" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/jacoco" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/javascript" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/jetty" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-groovy" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-java" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-jvm" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-native" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-scala" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/launcher" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/maven" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/messaging" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/model-core" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/model-groovy" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/native" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/open-api" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/osgi" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-base" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-jvm" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-native" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-play" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/plugin-development" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/plugin-use" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/plugins" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/publish" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/reporting" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources-http" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources-s3" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/resources-sftp" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/scala" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/signing" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/sonar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/testing-native" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/plugin-development" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/base-services" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/model-core" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-java" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/internal-testing" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/tooling-api" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/tooling-api-builders" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/signing" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-jvm" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/jetty" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/build-init" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/sonar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/internal-integ-testing" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/ui" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/wrapper" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/ant-1.9.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/platform-base" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/language-groovy" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/ant-launcher-1.9.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-open-api-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-base-services-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-native-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-base-services-groovy-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-cli-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-core-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-docs-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-core-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-resources-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-model-groovy-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-wrapper-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-cli-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/groovy-all-2.3.10.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/ant-1.9.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-ui-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-launcher-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-messaging-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-model-core-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-model-groovy-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-native-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-open-api-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-resources-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-tooling-api-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-ui-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/gradle-wrapper-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/groovy-all-2.3.10.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-announce-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-plugin-use-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ide-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-platform-native-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-signing-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-scala-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-build-init-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-antlr-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-build-comparison-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-build-init-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-code-quality-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-dependency-management-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-diagnostics-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ear-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ide-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ide-native-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ivy-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-jacoco-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-javascript-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-jetty-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-groovy-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-java-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-jvm-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-native-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-scala-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-maven-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-osgi-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-platform-base-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-platform-jvm-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-platform-native-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-platform-play-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-plugin-development-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-plugin-use-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-plugins-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-publish-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-reporting-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-resources-http-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-resources-s3-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-resources-sftp-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-scala-2.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-signing-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-code-quality-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-maven-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-sonar-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-javascript-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-dependency-management-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-native-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-jvm-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-publish-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-java-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-platform-jvm-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ivy-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ide-native-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-testing-native-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-osgi-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-language-groovy-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-jacoco-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-announce-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-diagnostics-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-resources-sftp-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-jetty-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-plugins-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-resources-s3-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-tooling-api-builders-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-resources-http-2.4.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-ear-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-reporting-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-scala-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-plugin-development-2.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/lib/plugins/gradle-platform-base-2.4.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -2503,27 +2441,35 @@
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/CustomPathDatabaseContext.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBType.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/ColumnInfo.java" />
-        <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Database.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Timestamp.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Person.java" />
+        <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" />
+        <option value="$PROJECT_DIR$/dbhelper/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java" />
+        <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/ID.java" />
+        <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
-        <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java" />
-        <option value="$PROJECT_DIR$/dbhelper/build.gradle" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="NamedScopeManager">
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -2549,8 +2495,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2641,7 +2588,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="androidTest" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2649,7 +2596,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="dbhelper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2663,7 +2610,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="dbhelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbhelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBHelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBHelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbhelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2679,7 +2676,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2687,8 +2683,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="10.117.3.192:5555" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="5.1" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="7C5901B15692" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="android6" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="OverrideImplement.combined" value="true" />
@@ -2961,6 +2957,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="070119cc-c075-4a95-9764-c3dcc0330cee" name="Default" comment="" />
@@ -2971,7 +2970,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2980,15 +2979,16 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14163822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5904437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25938568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33494365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42512077" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31239936" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24810892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27729085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2997,12 +2997,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -3024,11 +3023,86 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="e#943#1211#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3036,7 +3110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3045,22 +3118,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4055#4056#0" expanded="true" />
-            <element signature="e#4109#4110#0" expanded="true" />
-            <element signature="e#5563#5564#0" expanded="true" />
-            <element signature="e#5608#5609#0" expanded="true" />
-            <element signature="e#5661#5662#0" expanded="true" />
-            <element signature="e#5698#5699#0" expanded="true" />
-            <element signature="e#9039#9226#0" expanded="true" />
-            <element signature="e#9225#9226#0" expanded="true" />
-            <element signature="e#11371#11372#0" expanded="true" />
-            <element signature="e#11400#11401#0" expanded="true" />
-            <element signature="e#11436#11437#0" expanded="true" />
-            <element signature="e#11471#11472#0" expanded="true" />
-            <element signature="e#11507#11508#0" expanded="true" />
-            <element signature="e#11539#11540#0" expanded="true" />
-            <element signature="e#11594#11595#0" expanded="true" />
-            <element signature="e#11627#11628#0" expanded="true" />
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3069,7 +3128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3077,7 +3135,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
-          <folding />
+          <folding>
+            <element signature="e#943#1211#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3085,7 +3146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3102,22 +3162,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="187" column="27" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
           <folding>
-            <element signature="e#4055#4056#0" expanded="true" />
-            <element signature="e#4109#4110#0" expanded="true" />
-            <element signature="e#5563#5564#0" expanded="true" />
-            <element signature="e#5608#5609#0" expanded="true" />
-            <element signature="e#5661#5662#0" expanded="true" />
-            <element signature="e#5698#5699#0" expanded="true" />
-            <element signature="e#9039#9226#0" expanded="true" />
-            <element signature="e#9225#9226#0" expanded="true" />
-            <element signature="e#11371#11372#0" expanded="true" />
-            <element signature="e#11400#11401#0" expanded="true" />
-            <element signature="e#11436#11437#0" expanded="true" />
-            <element signature="e#11471#11472#0" expanded="true" />
-            <element signature="e#11507#11508#0" expanded="true" />
-            <element signature="e#11539#11540#0" expanded="true" />
-            <element signature="e#11594#11595#0" expanded="true" />
-            <element signature="e#11627#11628#0" expanded="true" />
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3135,22 +3181,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4055#4056#0" expanded="true" />
-            <element signature="e#4109#4110#0" expanded="true" />
-            <element signature="e#5563#5564#0" expanded="true" />
-            <element signature="e#5608#5609#0" expanded="true" />
-            <element signature="e#5661#5662#0" expanded="true" />
-            <element signature="e#5698#5699#0" expanded="true" />
-            <element signature="e#9039#9226#0" expanded="true" />
-            <element signature="e#9225#9226#0" expanded="true" />
-            <element signature="e#11371#11372#0" expanded="true" />
-            <element signature="e#11400#11401#0" expanded="true" />
-            <element signature="e#11436#11437#0" expanded="true" />
-            <element signature="e#11471#11472#0" expanded="true" />
-            <element signature="e#11507#11508#0" expanded="true" />
-            <element signature="e#11539#11540#0" expanded="true" />
-            <element signature="e#11594#11595#0" expanded="true" />
-            <element signature="e#11627#11628#0" expanded="true" />
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3174,22 +3206,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding>
-            <element signature="e#4055#4056#0" expanded="true" />
-            <element signature="e#4109#4110#0" expanded="true" />
-            <element signature="e#5563#5564#0" expanded="true" />
-            <element signature="e#5608#5609#0" expanded="true" />
-            <element signature="e#5661#5662#0" expanded="true" />
-            <element signature="e#5698#5699#0" expanded="true" />
-            <element signature="e#9039#9226#0" expanded="true" />
-            <element signature="e#9225#9226#0" expanded="true" />
-            <element signature="e#11371#11372#0" expanded="true" />
-            <element signature="e#11400#11401#0" expanded="true" />
-            <element signature="e#11436#11437#0" expanded="true" />
-            <element signature="e#11471#11472#0" expanded="true" />
-            <element signature="e#11507#11508#0" expanded="true" />
-            <element signature="e#11539#11540#0" expanded="true" />
-            <element signature="e#11594#11595#0" expanded="true" />
-            <element signature="e#11627#11628#0" expanded="true" />
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3228,22 +3246,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding>
-            <element signature="e#4055#4056#0" expanded="true" />
-            <element signature="e#4109#4110#0" expanded="true" />
-            <element signature="e#5563#5564#0" expanded="true" />
-            <element signature="e#5608#5609#0" expanded="true" />
-            <element signature="e#5661#5662#0" expanded="true" />
-            <element signature="e#5698#5699#0" expanded="true" />
-            <element signature="e#9039#9226#0" expanded="true" />
-            <element signature="e#9225#9226#0" expanded="true" />
-            <element signature="e#11371#11372#0" expanded="true" />
-            <element signature="e#11400#11401#0" expanded="true" />
-            <element signature="e#11436#11437#0" expanded="true" />
-            <element signature="e#11471#11472#0" expanded="true" />
-            <element signature="e#11507#11508#0" expanded="true" />
-            <element signature="e#11539#11540#0" expanded="true" />
-            <element signature="e#11594#11595#0" expanded="true" />
-            <element signature="e#11627#11628#0" expanded="true" />
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3285,25 +3289,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.0">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.666667">
           <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/local.properties">
@@ -3317,7 +3319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3325,7 +3326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3333,15 +3333,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42058823">
           <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29411766">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3349,17 +3340,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17826086">
-          <caret line="125" column="19" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3367,7 +3347,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3375,39 +3354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6652174">
           <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/platforms/android-23/android.jar!/junit/framework/TestCase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2955665">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/test/AndroidTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33179724">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/test/ApplicationTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33179724">
-          <caret line="58" column="81" selection-start-line="58" selection-start-column="81" selection-end-line="58" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8563734">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3415,127 +3361,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6768402">
           <caret line="26" column="32" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.96">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/test/AndroidTestRunner.java">
+    <entry file="file://$USER_HOME$/Android/sdk/sources/android-23/android/database/sqlite/SQLiteDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33136094">
-          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding>
-            <element signature="e#6256#6257#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/app/Instrumentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1701" column="0" selection-start-line="1701" selection-start-column="0" selection-end-line="1701" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/test/InstrumentationTestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="567" column="59" selection-start-line="567" selection-start-column="59" selection-end-line="567" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/platforms/android-23/android.jar!/junit/framework/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3542601">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/database/sqlite/SQLiteCursorDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33252427">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/common-tools/adt-bundle-windows-x86_64-20140702/sdk/sources/android-23/android/database/sqlite/SQLiteDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6723301">
-          <caret line="1315" column="28" selection-start-line="1315" selection-start-column="28" selection-end-line="1315" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-          <folding>
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding>
-            <element signature="e#4055#4056#0" expanded="true" />
-            <element signature="e#4109#4110#0" expanded="true" />
-            <element signature="e#5563#5564#0" expanded="true" />
-            <element signature="e#5608#5609#0" expanded="true" />
-            <element signature="e#5661#5662#0" expanded="true" />
-            <element signature="e#5698#5699#0" expanded="true" />
-            <element signature="e#9039#9226#0" expanded="true" />
-            <element signature="e#9225#9226#0" expanded="true" />
-            <element signature="e#11371#11372#0" expanded="true" />
-            <element signature="e#11400#11401#0" expanded="true" />
-            <element signature="e#11436#11437#0" expanded="true" />
-            <element signature="e#11471#11472#0" expanded="true" />
-            <element signature="e#11507#11508#0" expanded="true" />
-            <element signature="e#11539#11540#0" expanded="true" />
-            <element signature="e#11594#11595#0" expanded="true" />
-            <element signature="e#11627#11628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.33254716">
+          <caret line="1308" column="18" selection-start-line="1308" selection-start-column="18" selection-end-line="1308" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.035906643">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.5896226">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/annotation/Column.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38539043">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4534005">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/dbhelper.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.49541286">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1529052">
+          <caret line="264" column="17" selection-start-line="264" selection-start-column="17" selection-end-line="264" selection-end-column="17" />
+          <folding>
+            <element signature="e#9562#9749#0" expanded="true" />
+            <element signature="e#9748#9749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/qiushao/dbhelper/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3669724">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="e#943#1211#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.3639145">
+          <caret line="44" column="3" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="9.30581">
+          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+          <folding>
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

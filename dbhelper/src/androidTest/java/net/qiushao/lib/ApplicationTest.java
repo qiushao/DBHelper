@@ -1,6 +1,7 @@
 package net.qiushao.lib;
 
 import android.app.Application;
+import android.database.Cursor;
 import android.test.ApplicationTestCase;
 import android.util.Log;
 
@@ -216,5 +217,23 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         assertEquals(person.weight, 52.00);
 
         Log.i(TAG, "test query by primary end");
+    }
+
+    public void testRawQuery() {
+        Log.i(TAG, "test raw query start");
+
+        db.clean();
+
+        db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
+        db.insert(new Person("2", "qiushao", 26, false, 165.0f, 53.00));
+        db.insert(new Person("3", "junday", 23, false, 165.0f, 52.00));
+        db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
+        db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
+
+        Cursor cursor = db.rawQuery("select * from " + db.getTableName() +
+                " where name = ?", new String[]{"qiushao"});
+        assertEquals(cursor.getCount(), 3);
+
+        Log.i(TAG, "test raw query end");
     }
 }

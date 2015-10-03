@@ -28,6 +28,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     private SQLiteStatement insertOrIgnoreStatement;
     private final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private final Lock writeLock = readWriteLock.writeLock();
+    private final Lock readLock = readWriteLock.readLock();
 
     private String dbName;
     private String tableName;
@@ -38,7 +39,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     private String insertOrIgnoreSql;
     private LinkedList<ColumnInfo> columns;
     private LinkedList<ColumnInfo> primaryColumns;
-    private ColumnInfo autoIncrementColumn;
+    private ColumnInfo id;
 
 	public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz) {
 		super(new CustomPathDatabaseContext(context, dir), dbName, null, version);
@@ -119,11 +120,22 @@ public class DBHelper<T> extends SQLiteOpenHelper{
             sql.append(" where ");
             sql.append(whereClause);
         }
-        db.execSQL(sql.toString(), whereArgs);
+
+        writeLock.lock();
+        try {
+            db.execSQL(sql.toString(), whereArgs);
+        } finally {
+            writeLock.unlock();
+        }
     }
 
     public void clean() {
-        db.execSQL("delete from " + tableName);
+        writeLock.lock();
+        try {
+            db.execSQL("delete from " + tableName);
+        } finally {
+            writeLock.unlock();
+        }
     }
 
     public Collection<T> query(String whereClause, String[] args) {
@@ -134,8 +146,13 @@ public class DBHelper<T> extends SQLiteOpenHelper{
             sql.append(" where ");
             sql.append(whereClause);
         }
-        Cursor cursor = db.rawQuery(sql.toString(), args);
-        return cursorToObjects(cursor);
+        readLock.lock();
+        try {
+            Cursor cursor = db.rawQuery(sql.toString(), args);
+            return cursorToObjects(cursor);
+        } finally {
+            readLock.unlock();
+        }
     }
 
     /**
@@ -164,20 +181,35 @@ public class DBHelper<T> extends SQLiteOpenHelper{
             }
         }
 
-        Cursor cursor = db.rawQuery(sql.toString(), args);
-        Collection<T> objects = cursorToObjects(cursor);
-        for(T object : objects) {
-            return object;
+        readLock.lock();
+        try {
+            Cursor cursor = db.rawQuery(sql.toString(), args);
+            Collection<T> objects = cursorToObjects(cursor);
+            for(T object : objects) {
+                return object;
+            }
+            return null;
+        } finally {
+            readLock.unlock();
         }
-        return null;
     }
 
     public Cursor rawQuery(String sql, String[] args) {
-        return db.rawQuery(sql, args);
+        readLock.lock();
+        try {
+            return db.rawQuery(sql, args);
+        } finally {
+            readLock.unlock();
+        }
     }
 
     public void exeSql(String sql, Object[] args) {
-        db.execSQL(sql, args);
+        writeLock.lock();
+        try {
+            db.execSQL(sql, args);
+        } finally {
+            writeLock.unlock();
+        }
     }
 
     private Collection<T> cursorToObjects(Cursor cursor) {
@@ -198,9 +230,9 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         Object object = null;
         try {
             object = claz.newInstance();
-            if(autoIncrementColumn != null) {
-                autoIncrementColumn.field.set(object,
-                        autoIncrementColumn.type.getValue(cursor, autoIncrementColumn.index));
+            if(id != null) {
+                id.field.set(object,
+                        id.type.getValue(cursor, id.index));
             }
             for (ColumnInfo column : columns) {
                 column.field.set(object, column.type.getValue(cursor, column.index));
@@ -219,7 +251,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     }
     
     private void bindInsertStatementArgs(SQLiteStatement statement, Object object) {
-        int inc = autoIncrementColumn == null ? 1 : 0;
+        int inc = id == null ? 1 : 0;
         try {
             for (ColumnInfo column : columns) {
                 column.type.bindArg(statement, column.index + inc, column.field.get(object));
@@ -262,13 +294,13 @@ public class DBHelper<T> extends SQLiteOpenHelper{
                 primaryColumns.add(columnInfo);
             }
 
-            if(column.autoincrementID()) {
-                if(autoIncrementColumn != null ) {
-                    throw new RuntimeException("autoincrementID can't be set more than one times!");
+            if(column.ID()) {
+                if(id != null ) {
+                    throw new RuntimeException("ID can't be set more than one times!");
                 }
-                autoIncrementColumn = columnInfo;
-                if(!autoIncrementColumn.type.getName().equals("INTEGER")) {
-                    throw new RuntimeException("autoincrementID column must be integer type");
+                id = columnInfo;
+                if(!id.type.getName().equals("INTEGER")) {
+                    throw new RuntimeException("ID column must be integer type");
                 }
             } else {
                 columns.add(columnInfo);
@@ -294,9 +326,9 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE IF NOT EXISTS ");
         sql.append(tableName);
-        if(autoIncrementColumn != null) {
+        if(id != null) {
             sql.append("(");
-            sql.append(autoIncrementColumn.name);
+            sql.append(id.name);
             sql.append(" integer primary key autoincrement, ");
         } else {
             sql.append("(");

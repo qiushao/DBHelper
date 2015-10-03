@@ -23,8 +23,8 @@ public @interface Column {
     boolean primary() default false;
 
     /**
-     * if autoincrementID is true, column's index will be 0, and column will be autoincrement.
+     * if ID is true, column's index will be 0, and column will be autoincrement.
      * column's type must be integer
      */
-    boolean autoincrementID() default false;
+    boolean ID() default false;
 }

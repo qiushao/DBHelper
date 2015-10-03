@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.query).setOnClickListener(this);
 
         db = DBFactory.getInstance(this).getDBHelper(Person.class);
-//        db = DBFactory.getInstance(this).getDBHelper(Person.class, "/data/database");
         myRegisterReceiver();
     }
 
