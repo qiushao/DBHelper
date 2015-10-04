@@ -9,20 +9,22 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Database {
 	/**
-	 * database name, dbhelper will add ".db" suffix automatic,
-     * default is package name
+	 * @return 数据库名，默认为包名（其中的'.' 会被替换为'_'） + ".db"
 	 */
     String databaseName() default "";
 
+    /**
+     * @return 数据库存放的位置，默认是 '/data/data/包名/database'
+     */
     String databaseDir() default "";
 
     /**
-     * table name, default is class simple name
+     * @return 表名，默认为简单类名
      */
     String tableName() default "";
 
     /**
-     * table version
+     * @return 数据库表的版本，默认为1
      */
     int tableVersion() default 1;
 }

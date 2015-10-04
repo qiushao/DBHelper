@@ -54,7 +54,11 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         insertOrReplaceStatement = db.compileStatement(insertOrReplaceSql);
         insertOrIgnoreStatement = db.compileStatement(insertOrIgnoreSql);
 	}
-	
+
+    /**
+     * 插入一个对象到数据库中
+     * @param object 要插入数据库的对象
+     */
 	public void insert(T object) {
         writeLock.lock();
         try {
@@ -66,10 +70,9 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     }
 
     /**
-     * this method requires your table have a primary key,
-     * if primary key not in database, that will insert object into database,
-     * else update database with new value
-     * @param object
+     * 如果数据库中已经存在相同的主键了，则更新数据，
+     * 否则插入对象到数据库
+     * @param object 要插入数据库的对象
      */
     public void insertOrReplace(T object) {
         writeLock.lock();
@@ -82,10 +85,9 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     }
 
     /**
-     * this method requires your table have a primary key,
-     * if primary key not in database, that will insert object into database,
-     * else this operate will be ignore
-     * @param object
+     * 如果数据库中已经存在相同的主键了，则啥都不干，
+     * 否则插入对象到数据库
+     * @param object 要插入数据库的对象
      */
     public void insertOrIgnore(T object) {
         writeLock.lock();
@@ -97,6 +99,10 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         }
     }
 
+    /**
+     * 插入Collection 集合中的所有元素到数据库
+     * @param objects
+     */
     public void insertAll(Collection<T> objects) {
         writeLock.lock();
         db.beginTransaction();
@@ -112,6 +118,12 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         }
     }
 
+    /**
+     * 删除满足条件的数据
+     * 例：db.delete("id=?", new Object[]{"1"})
+     * @param whereClause 条件表达式
+     * @param whereArgs 条件表达式的参数
+     */
     public void delete(String whereClause, Object[] whereArgs) {
         StringBuilder sql = new StringBuilder();
         sql.append("delete from ");
@@ -129,6 +141,9 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         }
     }
 
+    /**
+     * 清空数据库
+     */
     public void clean() {
         writeLock.lock();
         try {
@@ -138,6 +153,12 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         }
     }
 
+    /**
+     * 条件查询
+     * @param whereClause 条件表达式
+     * @param args 条件表达式的参数
+     * @return 返回满足条件的对象
+     */
     public Collection<T> query(String whereClause, String[] args) {
         StringBuilder sql = new StringBuilder();
         sql.append("select * from ");
@@ -156,10 +177,11 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     }
 
     /**
-     *
-     * @param args
+     * 根据数据库主键查询
+     * @param keys 主键键值
+     * @return 主键为 keys 的元素
      */
-    public T queryByPrimary(String[] args) {
+    public T queryByPrimary(String[] keys) {
         if(primaryColumns.size() == 0) {
             throw new RuntimeException("you should specify the primary key");
         }
@@ -183,7 +205,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
 
         readLock.lock();
         try {
-            Cursor cursor = db.rawQuery(sql.toString(), args);
+            Cursor cursor = db.rawQuery(sql.toString(), keys);
             Collection<T> objects = cursorToObjects(cursor);
             for(T object : objects) {
                 return object;
@@ -194,6 +216,14 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         }
     }
 
+    /**
+     * 直接写数据库语句查询，有时候查询的条件比较复杂，比较嵌套查询，联表查询
+     * 使用query(String whereClause, String[] args)方法不能满足，
+     * 则可以使用此方法来查询
+     * @param sql 完整的数据库语句
+     * @param args 数据库语句中"?"的替换参数
+     * @return 满足条件的结果集
+     */
     public Cursor rawQuery(String sql, String[] args) {
         readLock.lock();
         try {
@@ -203,6 +233,11 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         }
     }
 
+    /**
+     * 执行不带返回值的数据库语句
+     * @param sql 完整的数据库语句
+     * @param args 数据库语句中"?"的替换参数
+     */
     public void exeSql(String sql, Object[] args) {
         writeLock.lock();
         try {
