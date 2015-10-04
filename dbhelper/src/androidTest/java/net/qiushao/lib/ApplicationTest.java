@@ -236,4 +236,23 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
         Log.i(TAG, "test raw query end");
     }
+
+    public void testExeSql() {
+        Log.i(TAG, "test exeSql start");
+
+        db.clean();
+
+        db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
+        db.insert(new Person("2", "qiushao", 26, false, 165.0f, 53.00));
+        db.insert(new Person("3", "junday", 23, false, 165.0f, 52.00));
+        db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
+        db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
+
+        db.exeSql("update " + db.getTableName() + " set age = 30 where id = ?", new Object[]{"1"});
+
+        Person person = db.queryByPrimary(new String[]{"1"});
+        assertEquals(person.age, 30);
+
+        Log.i(TAG, "test exeSql end");
+    }
 }

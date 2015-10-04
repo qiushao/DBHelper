@@ -101,12 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void update() {
-        Person person = new Person();
-        person.name = "qiushao";
-        person.age = 28;
-        person.marry = true;
-        person.weight = 55.0;
-        db.insertOrReplace(person);
+        db.insertOrReplace(new Person("qiushao", 28, true, 55.0));
     }
 
     private void query() {
