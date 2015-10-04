@@ -1,5 +1,6 @@
 package net.qiushao.lib.dbhelper;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -151,6 +152,32 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         } finally {
             writeLock.unlock();
         }
+    }
+
+    /**
+     *
+     * @param values
+     * @param whereClause
+     * @param whereArgs
+     * @return
+     */
+    public int update(ContentValues values, String whereClause, String[] whereArgs) {
+        return db.update(tableName, values, whereClause, whereArgs);
+    }
+
+    /**
+     *
+     * @param values
+     * @param whereClause
+     * @param whereArgs
+     * @param conflictAlgorithm
+     * @return
+     */
+    public int updateWithOnConflict(ContentValues values,
+                                    String whereClause,
+                                    String[] whereArgs,
+                                    int conflictAlgorithm) {
+        return db.updateWithOnConflict(tableName, values, whereClause,whereArgs, conflictAlgorithm);
     }
 
     /**
