@@ -18,11 +18,11 @@ import java.util.LinkedList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class DBHelper<T> extends SQLiteOpenHelper{
+public class DBHelper<T> extends SQLiteOpenHelper {
 
     private static boolean debug = true;
 
-	private Class<?> claz;
+    private Class<?> claz;
     private SQLiteDatabase db;
     private SQLiteStatement insertStatement;
     private SQLiteStatement insertOrReplaceStatement;
@@ -42,9 +42,9 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     private LinkedList<ColumnInfo> primaryColumns;
     private ColumnInfo id;
 
-	public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz) {
-		super(new CustomPathDatabaseContext(context, dir), dbName, null, version);
-		this.dbName = dbName;
+    public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz) {
+        super(new CustomPathDatabaseContext(context, dir), dbName, null, version);
+        this.dbName = dbName;
         this.tableName = tableName;
         tableVersion = version;
         this.claz = claz;
@@ -54,13 +54,14 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         insertStatement = db.compileStatement(insertSql);
         insertOrReplaceStatement = db.compileStatement(insertOrReplaceSql);
         insertOrIgnoreStatement = db.compileStatement(insertOrIgnoreSql);
-	}
+    }
 
     /**
      * 插入一个对象到数据库中
+     *
      * @param object 要插入数据库的对象
      */
-	public void insert(T object) {
+    public void insert(T object) {
         writeLock.lock();
         try {
             bindInsertStatementArgs(insertStatement, object);
@@ -73,6 +74,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     /**
      * 如果数据库中已经存在相同的主键了，则更新数据，
      * 否则插入对象到数据库
+     *
      * @param object 要插入数据库的对象
      */
     public void insertOrReplace(T object) {
@@ -88,6 +90,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     /**
      * 如果数据库中已经存在相同的主键了，则啥都不干，
      * 否则插入对象到数据库
+     *
      * @param object 要插入数据库的对象
      */
     public void insertOrIgnore(T object) {
@@ -102,6 +105,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
 
     /**
      * 插入Collection 集合中的所有元素到数据库
+     *
      * @param objects
      */
     public void insertAll(Collection<T> objects) {
@@ -122,8 +126,9 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     /**
      * 删除满足条件的数据
      * 例：db.delete("id=?", new Object[]{"1"})
+     *
      * @param whereClause 条件表达式
-     * @param whereArgs 条件表达式的参数
+     * @param whereArgs   条件表达式的参数
      */
     public void delete(String whereClause, Object[] whereArgs) {
         StringBuilder sql = new StringBuilder();
@@ -155,35 +160,25 @@ public class DBHelper<T> extends SQLiteOpenHelper{
     }
 
     /**
-     *
      * @param values
      * @param whereClause
      * @param whereArgs
      * @return
      */
     public int update(ContentValues values, String whereClause, String[] whereArgs) {
-        return db.update(tableName, values, whereClause, whereArgs);
-    }
-
-    /**
-     *
-     * @param values
-     * @param whereClause
-     * @param whereArgs
-     * @param conflictAlgorithm
-     * @return
-     */
-    public int updateWithOnConflict(ContentValues values,
-                                    String whereClause,
-                                    String[] whereArgs,
-                                    int conflictAlgorithm) {
-        return db.updateWithOnConflict(tableName, values, whereClause,whereArgs, conflictAlgorithm);
+        readLock.lock();
+        try {
+            return db.update(tableName, values, whereClause, whereArgs);
+        } finally {
+            readLock.unlock();
+        }
     }
 
     /**
      * 条件查询
+     *
      * @param whereClause 条件表达式
-     * @param args 条件表达式的参数
+     * @param args        条件表达式的参数
      * @return 返回满足条件的对象
      */
     public Collection<T> query(String whereClause, String[] args) {
@@ -205,11 +200,12 @@ public class DBHelper<T> extends SQLiteOpenHelper{
 
     /**
      * 根据数据库主键查询
+     *
      * @param keys 主键键值
      * @return 主键为 keys 的元素
      */
     public T queryByPrimary(String[] keys) {
-        if(primaryColumns.size() == 0) {
+        if (primaryColumns.size() == 0) {
             throw new RuntimeException("you should specify the primary key");
         }
         StringBuilder sql = new StringBuilder();
@@ -218,8 +214,8 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         sql.append(" where ");
 
         boolean firstCondition = true;
-        for(ColumnInfo column : primaryColumns) {
-            if(firstCondition) {
+        for (ColumnInfo column : primaryColumns) {
+            if (firstCondition) {
                 firstCondition = false;
                 sql.append(column.name);
                 sql.append("=?");
@@ -234,7 +230,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         try {
             Cursor cursor = db.rawQuery(sql.toString(), keys);
             Collection<T> objects = cursorToObjects(cursor);
-            for(T object : objects) {
+            for (T object : objects) {
                 return object;
             }
             return null;
@@ -247,7 +243,8 @@ public class DBHelper<T> extends SQLiteOpenHelper{
      * 直接写数据库语句查询，有时候查询的条件比较复杂，比较嵌套查询，联表查询
      * 使用query(String whereClause, String[] args)方法不能满足，
      * 则可以使用此方法来查询
-     * @param sql 完整的数据库语句
+     *
+     * @param sql  完整的数据库语句
      * @param args 数据库语句中"?"的替换参数
      * @return 满足条件的结果集
      */
@@ -262,10 +259,26 @@ public class DBHelper<T> extends SQLiteOpenHelper{
 
     /**
      * 执行不带返回值的数据库语句
-     * @param sql 完整的数据库语句
+     *
+     * @param sql  完整的数据库语句
+     */
+    public void execSQL(String sql) {
+        writeLock.lock();
+        try {
+            db.execSQL(sql);
+        } finally {
+            writeLock.unlock();
+        }
+    }
+
+
+    /**
+     * 执行不带返回值的数据库语句
+     *
+     * @param sql  完整的数据库语句
      * @param args 数据库语句中"?"的替换参数
      */
-    public void exeSql(String sql, Object[] args) {
+    public void execSQL(String sql, Object[] args) {
         writeLock.lock();
         try {
             db.execSQL(sql, args);
@@ -287,12 +300,12 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         cursor.close();
         return list;
     }
-    
+
     private T newInstance(Cursor cursor) {
         Object object = null;
         try {
             object = claz.newInstance();
-            if(id != null) {
+            if (id != null) {
                 id.field.set(object,
                         id.type.getValue(cursor, id.index));
             }
@@ -311,7 +324,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         }
         return (T) object;
     }
-    
+
     private void bindInsertStatementArgs(SQLiteStatement statement, Object object) {
         int inc = id == null ? 1 : 0;
         try {
@@ -323,8 +336,8 @@ public class DBHelper<T> extends SQLiteOpenHelper{
             throw new RuntimeException(e);
         }
     }
-    
-	private void initDatabaseInfo() {
+
+    private void initDatabaseInfo() {
         columns = new LinkedList<ColumnInfo>();
         primaryColumns = new LinkedList<ColumnInfo>();
 
@@ -343,25 +356,25 @@ public class DBHelper<T> extends SQLiteOpenHelper{
                     column.index()
             );
 
-            if(columnInfo.name.equals("")) {
+            if (columnInfo.name.equals("")) {
                 columnInfo.name = field.getName();
             }
 
-            if(columnInfo.index == -1) {
+            if (columnInfo.index == -1) {
                 columnInfo.index = index;
                 index++;
             }
 
-            if(column.primary()) {
+            if (column.primary()) {
                 primaryColumns.add(columnInfo);
             }
 
-            if(column.ID()) {
-                if(id != null ) {
+            if (column.ID()) {
+                if (id != null) {
                     throw new RuntimeException("ID can't be set more than one times!");
                 }
                 id = columnInfo;
-                if(!id.type.getName().equals("INTEGER")) {
+                if (!id.type.getName().equals("INTEGER")) {
                     throw new RuntimeException("ID column must be integer type");
                 }
             } else {
@@ -375,10 +388,10 @@ public class DBHelper<T> extends SQLiteOpenHelper{
                 return lhs.index - rhs.index;
             }
         });
-        
+
         genCreateTableSql();
         genInsertSql();
-        if(debug) {
+        if (debug) {
             System.out.println("createTableSql = " + createTableSql);
             System.out.println("insertSql = " + insertSql);
         }
@@ -388,7 +401,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE IF NOT EXISTS ");
         sql.append(tableName);
-        if(id != null) {
+        if (id != null) {
             sql.append("(");
             sql.append(id.name);
             sql.append(" integer primary key autoincrement, ");
@@ -403,7 +416,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
             sql.append(",");
         }
 
-        if(primaryColumns.size() > 0) {
+        if (primaryColumns.size() > 0) {
             sql.append("primary key(");
             for (ColumnInfo column : primaryColumns) {
                 sql.append(column.name);
@@ -442,7 +455,7 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         sql.append(values);
         insertOrReplaceSql = sql.toString();
         insertOrIgnoreSql = insertOrReplaceSql.replaceFirst("OR REPLACE ", "OR IGNORE ");
-        insertSql =  insertOrReplaceSql.replaceFirst("OR REPLACE ", "");
+        insertSql = insertOrReplaceSql.replaceFirst("OR REPLACE ", "");
     }
 
     public String getDBName() {
@@ -457,14 +470,14 @@ public class DBHelper<T> extends SQLiteOpenHelper{
         return tableName;
     }
 
-	@Override
-	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(createTableSql);
-	}
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(createTableSql);
+    }
 
-	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL("DROP TABLE IF EXISTS " + tableName);
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + tableName);
         onCreate(db);
-	}
+    }
 }

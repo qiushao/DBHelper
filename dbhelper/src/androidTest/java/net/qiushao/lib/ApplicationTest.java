@@ -238,7 +238,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     }
 
     public void testExeSql() {
-        Log.i(TAG, "test exeSql start");
+        Log.i(TAG, "test execSQL start");
 
         db.clean();
 
@@ -248,7 +248,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
         db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
 
-        db.exeSql("update " + db.getTableName() + " set age = 30 where id = ?", new Object[]{"1"});
+        db.execSQL("update " + db.getTableName() + " set age = 30 where id = ?", new Object[]{"1"});
 
         Person person = db.queryByPrimary(new String[]{"1"});
         assertEquals(person.age, 30);
