@@ -27,4 +27,10 @@ public @interface Database {
      * @return 数据库表的版本，默认为1
      */
     int tableVersion() default 1;
+
+    /**
+     *
+     * @return
+     */
+    boolean isPublic() default false;
 }

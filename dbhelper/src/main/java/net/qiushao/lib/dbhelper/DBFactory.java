@@ -65,7 +65,13 @@ public class DBFactory {
             return map.get(key);
         }
 
-		DBHelper<T> db = new DBHelper<>(context, databaseDir, dbName, tableName, database.tableVersion(), claz);
+		DBHelper<T> db = new DBHelper<>(context,
+                databaseDir,
+                dbName,
+                tableName,
+                database.tableVersion(),
+                claz,
+                database.isPublic());
 		map.put(key, db);
 		return db;
 	}

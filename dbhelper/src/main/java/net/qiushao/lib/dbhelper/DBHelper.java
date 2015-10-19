@@ -42,8 +42,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     private LinkedList<ColumnInfo> primaryColumns;
     private ColumnInfo id;
 
-    public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz) {
-        super(new CustomPathDatabaseContext(context, dir), dbName, null, version);
+    public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz, boolean isPublic) {
+        super(new CustomPathDatabaseContext(context, dir, isPublic), dbName, null, version);
         this.dbName = dbName;
         this.tableName = tableName;
         tableVersion = version;

@@ -24,6 +24,9 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 task makeJar(type: Copy) {
     delete 'dbhelper-' + version + '.jar'
