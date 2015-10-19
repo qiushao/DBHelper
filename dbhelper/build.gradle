@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-version = '1.1.0'
+version = '1.1.1'
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'dbhelper'

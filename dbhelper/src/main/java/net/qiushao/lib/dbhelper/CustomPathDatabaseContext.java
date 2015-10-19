@@ -43,6 +43,7 @@ class CustomPathDatabaseContext extends ContextWrapper {
         if(isPublic) {
             try {
                 Runtime.getRuntime().exec("chmod -R 777 " + getDatabasePath(name).getAbsolutePath());
+                Runtime.getRuntime().exec("chmod -R 777 " + getDatabasePath(name).getAbsolutePath() + "-journal");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -57,6 +58,7 @@ class CustomPathDatabaseContext extends ContextWrapper {
         if(isPublic) {
             try {
                 Runtime.getRuntime().exec("chmod -R 777 " + getDatabasePath(name).getAbsolutePath());
+                Runtime.getRuntime().exec("chmod -R 777 " + getDatabasePath(name).getAbsolutePath() + "-journal");
             } catch (IOException e) {
                 e.printStackTrace();
             }
