@@ -7,12 +7,12 @@ DBHelper是一个轻量级的ORM数据框架，简单易用。
 
 ### 导入
 #### eclipse
-下载 [dbhelper-1.0.8.jar](https://github.com/qiushao/DBHelper/raw/master/downloads/dbhelper-1.0.8.jar)，将其放到工程的 `libs` 目录下.
+下载 [dbhelper-1.1.0.jar](https://github.com/qiushao/DBHelper/raw/master/downloads/dbhelper-1.1.0.jar)，将其放到工程的 `libs` 目录下.
 
 #### gradle
 在模块的构建脚本中添加如下依赖
 ```
-compile 'net.qiushao:dbhelper:1.0.8'
+compile 'net.qiushao:dbhelper:1.1.0'
 ```
 
 ### 基本用法
@@ -85,13 +85,13 @@ DBHelper 并没有直接提供update接口，但可以通过以下两种方法�
 //1.插入或更新, 如果主键已经在数据库中存在了，则更新，否则插入数据库
 db.insertOrReplace(new Person(id, name, age, marry, height, weight));
 
-//2.exeSql, 直接写数据库语句
-db.exeSql("update " + db.getTableName() + " set age = 30 where id = ?", new Object[]{"1"});
+//2.execSQL, 直接写数据库语句
+db.execSQL("update " + db.getTableName() + " set age = 30 where id = ?", new Object[]{"1"});
 ```
 
 - query
 ```
-//条件查询
+//条件查询，推荐使用占位符？的形式
 Collection<Person> objects = db.query("name=?", new String[] {"qiushao"});
 
 //查询所有
