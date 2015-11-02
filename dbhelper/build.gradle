@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-version = '1.1.1'
+version = '1.1.4'
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'dbhelper'
@@ -43,7 +43,7 @@ android {
     buildToolsVersion "23.0.0"
 
     defaultConfig {
-        minSdkVersion 17
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"

@@ -5,6 +5,7 @@ import android.content.ContextWrapper;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,14 +23,21 @@ class CustomPathDatabaseContext extends ContextWrapper {
 
 	@Override
 	public File getDatabasePath(String name) {
-		File result = new File(mDirPath + File.separator + name);
+		File result = new File(mDirPath, name);
+        File parent = result.getParentFile();
+        while (!parent.getParentFile().exists()) {
+            parent = parent.getParentFile();
+        }
+
 		if (!result.getParentFile().exists()) {
 			result.getParentFile().mkdirs();
             if(isPublic) {
                 try {
-                    Runtime.getRuntime().exec("chmod -R 777 " + result.getParent());
+                    Runtime.getRuntime().exec("chmod -R 777 " + parent.getPath());
+                    Log.d("dbhelper", "chmod -R 777 " + parent.getPath());
                 } catch (IOException e) {
                     e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         }
@@ -46,6 +54,7 @@ class CustomPathDatabaseContext extends ContextWrapper {
                 Runtime.getRuntime().exec("chmod -R 777 " + getDatabasePath(name).getAbsolutePath() + "-journal");
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
         return db;
@@ -61,6 +70,7 @@ class CustomPathDatabaseContext extends ContextWrapper {
                 Runtime.getRuntime().exec("chmod -R 777 " + getDatabasePath(name).getAbsolutePath() + "-journal");
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
         return db;
