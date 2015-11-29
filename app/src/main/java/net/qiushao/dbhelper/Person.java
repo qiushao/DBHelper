@@ -4,8 +4,7 @@ import net.qiushao.lib.dbhelper.annotation.Column;
 import net.qiushao.lib.dbhelper.annotation.Database;
 import net.qiushao.lib.dbhelper.annotation.Timestamp;
 
-@Database(databaseName = "person", tableName = "person", tableVersion = 1,
-        databaseDir = "/data/misc/konka/dbhelper/database")
+@Database(databaseName = "person", tableName = "person", tableVersion = 1)
 @Timestamp
 public class Person {
     @Column(index = 0, ID = true)

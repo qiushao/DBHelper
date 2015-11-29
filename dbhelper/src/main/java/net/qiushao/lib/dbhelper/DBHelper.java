@@ -260,7 +260,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     /**
      * 执行不带返回值的数据库语句
      *
-     * @param sql  完整的数据库语句
+     * @param sql 完整的数据库语句
      */
     public void execSQL(String sql) {
         writeLock.lock();
@@ -287,7 +287,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         }
     }
 
-    private Collection<T> cursorToObjects(Cursor cursor) {
+    public Collection<T> cursorToObjects(Cursor cursor) {
         LinkedList<T> list = new LinkedList<>();
         if (cursor != null) {
             while (cursor.moveToNext()) {
@@ -301,7 +301,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         return list;
     }
 
-    private T newInstance(Cursor cursor) {
+    public T newInstance(Cursor cursor) {
         Object object = null;
         try {
             object = claz.newInstance();
