@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.text.TextUtils;
-import android.util.Log;
 
 import net.qiushao.lib.dbhelper.annotation.Column;
 
@@ -328,7 +327,6 @@ public class DBHelper<T> extends SQLiteOpenHelper {
 
     private void bindInsertStatementArgs(SQLiteStatement statement, Object object) {
         int inc = (id == null ? 1 : 0);
-        Log.d("qiushao", "inc = " + inc);
         try {
             for (ColumnInfo column : columns) {
                 column.type.bindArg(statement, column.index + inc, column.field.get(object));
@@ -372,7 +370,6 @@ public class DBHelper<T> extends SQLiteOpenHelper {
             }
 
             if (column.ID()) {
-                Log.d("qiushao", "ID = true");
                 if (id != null) {
                     throw new RuntimeException("ID can't be set more than one times!");
                 }
@@ -395,6 +392,13 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         if (id != null && id.index != 0) {
             columns.get(0).index = id.index;
             id.index = 0;
+
+            Collections.sort(columns, new Comparator<ColumnInfo>() {
+                @Override
+                public int compare(ColumnInfo lhs, ColumnInfo rhs) {
+                    return lhs.index - rhs.index;
+                }
+            });
         }
 
         genCreateTableSql();
