@@ -6,7 +6,7 @@ import net.qiushao.lib.dbhelper.annotation.Database;
 /**
  * Created by shaoqiu on 2015-9-30.
  */
-@Database(tableVersion = 2, databaseDir = "/tmp/dbhelper", isPublic = true)
+@Database(tableVersion = 3)
 public class Person {
     @Column(primary = true)
     String id;

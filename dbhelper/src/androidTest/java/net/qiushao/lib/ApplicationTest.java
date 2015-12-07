@@ -255,4 +255,11 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
         Log.i(TAG, "test exeSql end");
     }
+
+    public void testID() {
+        Log.i("qiushao", "test ID start");
+        DBHelper db = DBFactory.getInstance(getContext()).getDBHelper(Record.class);
+        db.insert(new Record("2015-12-06", 12, "dinner"));
+        Log.i("qiushao", "test ID start");
+    }
 }
