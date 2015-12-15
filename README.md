@@ -7,12 +7,12 @@ DBHelper是一个轻量级的ORM数据框架，简单易用。
 
 ### 导入
 #### eclipse
-下载 [dbhelper-1.1.7.jar](https://github.com/qiushao/DBHelper/raw/master/downloads/dbhelper-1.1.7.jar)，将其放到工程的 `libs` 目录下.
+下载 [dbhelper-1.1.8.jar](https://github.com/qiushao/DBHelper/raw/master/downloads/dbhelper-1.1.8.jar)，将其放到工程的 `libs` 目录下.
 
 #### gradle
 在模块的构建脚本中添加如下依赖
 ```
-compile 'net.qiushao:dbhelper:1.1.7'
+compile 'net.qiushao:dbhelper:1.1.8'
 ```
 
 ### 基本用法

@@ -11,10 +11,12 @@ import android.text.TextUtils;
 import net.qiushao.lib.dbhelper.annotation.Column;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -181,7 +183,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
      * @param args        条件表达式的参数
      * @return 返回满足条件的对象
      */
-    public Collection<T> query(String whereClause, String[] args) {
+    public List<T> query(String whereClause, String[] args) {
         StringBuilder sql = new StringBuilder();
         sql.append("select * from ");
         sql.append(tableName);
@@ -287,8 +289,19 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         }
     }
 
-    public Collection<T> cursorToObjects(Cursor cursor) {
-        LinkedList<T> list = new LinkedList<>();
+    /**
+     * @return 数据库表数据量，即有多少个记录
+     */
+    public long size() {
+        Cursor cursor = db.rawQuery("select count(*) from " + getTableName() ,null);
+        cursor.moveToFirst();
+        long count = cursor.getLong(0);
+        cursor.close();
+        return count;
+    }
+
+    public List<T> cursorToObjects(Cursor cursor) {
+        ArrayList<T> list = new ArrayList<>();
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 T object = newInstance(cursor);

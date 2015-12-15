@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60746ec-18f2-4059-8ff0-27fd7f5e0848" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_1.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/build.gradle" afterPath="$PROJECT_DIR$/dbhelper/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/dbhelper.iml" afterPath="$PROJECT_DIR$/dbhelper/dbhelper.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" afterPath="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" afterPath="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
     </list>
     <ignored path="DBHelper.iws" />
@@ -43,27 +40,35 @@
     <favorites_list name="DBHelper" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61591697">
-              <caret line="375" column="32" selection-start-line="375" selection-start-column="32" selection-end-line="375" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="299" column="21" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
               <folding>
-                <element signature="e#10889#11076#0" expanded="true" />
-                <element signature="e#11075#11076#0" expanded="true" />
-                <element signature="e#11233#11440#0" expanded="true" />
-                <element signature="e#11439#11440#0" expanded="true" />
+                <element signature="e#11206#11393#0" expanded="true" />
+                <element signature="e#11392#11393#0" expanded="true" />
+                <element signature="e#11550#11757#0" expanded="true" />
+                <element signature="e#11756#11757#0" expanded="true" />
+                <element signature="e#13872#13873#0" expanded="true" />
+                <element signature="e#13901#13902#0" expanded="true" />
+                <element signature="e#13937#13938#0" expanded="true" />
+                <element signature="e#13972#13973#0" expanded="true" />
+                <element signature="e#14008#14009#0" expanded="true" />
+                <element signature="e#14040#14041#0" expanded="true" />
+                <element signature="e#14101#14102#0" expanded="true" />
+                <element signature="e#14143#14144#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.105263">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -73,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="261" column="58" selection-start-line="261" selection-start-column="58" selection-end-line="261" selection-end-column="58" />
+              <caret line="268" column="19" selection-start-line="268" selection-start-column="19" selection-end-line="268" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -562,9 +567,9 @@
                 <option name="name" value="prepareDebugUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare net.qiushao:dbhelper:1.1.7" />
+                <option name="description" value="Prepare net.qiushao:dbhelper:1.1.8" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareNetQiushaoDbhelper117Library" />
+                <option name="name" value="prepareNetQiushaoDbhelper118Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1193,9 +1198,9 @@
                 <option name="name" value="prepareDebugUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare net.qiushao:dbhelper:1.1.7" />
+                <option name="description" value="Prepare net.qiushao:dbhelper:1.1.8" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareNetQiushaoDbhelper117Library" />
+                <option name="name" value="prepareNetQiushaoDbhelper118Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1881,7 +1886,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5795125546844" />
+        <entry key="$PROJECT_DIR$" value="5795812511446" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2243,10 +2248,10 @@
         <option value="$PROJECT_DIR$/local.properties" />
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Record.java" />
         <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Person.java" />
-        <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/dbhelper/build.gradle" />
         <option value="$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java" />
+        <option value="$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java" />
+        <option value="$PROJECT_DIR$/dbhelper/build.gradle" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -2258,7 +2263,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1356" />
+    <option name="width" value="1360" />
     <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -2421,6 +2426,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2452,7 +2458,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2798,18 +2803,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ApplicationTest - 2015.12.06 at 21h 56m 35s.xml">
-      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="ApplicationTest - 2015.12.06 at 21h 57m 44s.xml">
-      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="ApplicationTest - 2015.12.06 at 21h 58m 36s.xml">
-      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="ApplicationTest - 2015.12.06 at 22h 00m 28s.xml">
-      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="ApplicationTest - 2015.12.06 at 22h 01m 15s.xml">
       <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
@@ -2828,10 +2821,22 @@
     <history-entry file="ApplicationTest - 2015.12.07 at 21h 31m 14s.xml">
       <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="ApplicationTest - 2015.12.15 at 20h 11m 08s.xml">
+      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ApplicationTest - 2015.12.15 at 20h 19m 40s.xml">
+      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ApplicationTest - 2015.12.15 at 20h 20m 19s.xml">
+      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ApplicationTest - 2015.12.15 at 20h 20m 30s.xml">
+      <configuration name="ApplicationTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1356" height="741" extended-state="4" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1360" height="741" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2842,13 +2847,13 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5625" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8209459" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46283785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3935811" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44425675" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3733108" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27760735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17507645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2888,10 +2893,55 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10889#11076#0" expanded="true" />
-            <element signature="e#11075#11076#0" expanded="true" />
-            <element signature="e#11233#11440#0" expanded="true" />
-            <element signature="e#11439#11440#0" expanded="true" />
+            <element signature="e#11206#11393#0" expanded="true" />
+            <element signature="e#11392#11393#0" expanded="true" />
+            <element signature="e#11550#11757#0" expanded="true" />
+            <element signature="e#11756#11757#0" expanded="true" />
+            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#13901#13902#0" expanded="true" />
+            <element signature="e#13937#13938#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14008#14009#0" expanded="true" />
+            <element signature="e#14040#14041#0" expanded="true" />
+            <element signature="e#14101#14102#0" expanded="true" />
+            <element signature="e#14143#14144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="261" column="58" selection-start-line="261" selection-start-column="58" selection-end-line="261" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#11206#11393#0" expanded="true" />
+            <element signature="e#11392#11393#0" expanded="true" />
+            <element signature="e#11550#11757#0" expanded="true" />
+            <element signature="e#11756#11757#0" expanded="true" />
+            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#13901#13902#0" expanded="true" />
+            <element signature="e#13937#13938#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14008#14009#0" expanded="true" />
+            <element signature="e#14040#14041#0" expanded="true" />
+            <element signature="e#14101#14102#0" expanded="true" />
+            <element signature="e#14143#14144#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2941,10 +2991,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="317" column="44" selection-start-line="317" selection-start-column="44" selection-end-line="317" selection-end-column="44" />
           <folding>
-            <element signature="e#10889#11076#0" expanded="true" />
-            <element signature="e#11075#11076#0" expanded="true" />
-            <element signature="e#11233#11440#0" expanded="true" />
-            <element signature="e#11439#11440#0" expanded="true" />
+            <element signature="e#11206#11393#0" expanded="true" />
+            <element signature="e#11392#11393#0" expanded="true" />
+            <element signature="e#11550#11757#0" expanded="true" />
+            <element signature="e#11756#11757#0" expanded="true" />
+            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#13901#13902#0" expanded="true" />
+            <element signature="e#13937#13938#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14008#14009#0" expanded="true" />
+            <element signature="e#14040#14041#0" expanded="true" />
+            <element signature="e#14101#14102#0" expanded="true" />
+            <element signature="e#14143#14144#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3087,13 +3145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="53" selection-start-line="100" selection-start-column="53" selection-end-line="100" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.239905">
@@ -3113,29 +3164,45 @@
     <entry file="file://$PROJECT_DIR$/dbhelper/src/androidTest/java/net/qiushao/lib/ApplicationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="261" column="58" selection-start-line="261" selection-start-column="58" selection-end-line="261" selection-end-column="58" />
+          <caret line="268" column="19" selection-start-line="268" selection-start-column="19" selection-end-line="268" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbhelper/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.8947368">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbhelper/src/main/java/net/qiushao/lib/dbhelper/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61591697">
-          <caret line="375" column="32" selection-start-line="375" selection-start-column="32" selection-end-line="375" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="299" column="21" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
           <folding>
-            <element signature="e#10889#11076#0" expanded="true" />
-            <element signature="e#11075#11076#0" expanded="true" />
-            <element signature="e#11233#11440#0" expanded="true" />
-            <element signature="e#11439#11440#0" expanded="true" />
+            <element signature="e#11206#11393#0" expanded="true" />
+            <element signature="e#11392#11393#0" expanded="true" />
+            <element signature="e#11550#11757#0" expanded="true" />
+            <element signature="e#11756#11757#0" expanded="true" />
+            <element signature="e#13872#13873#0" expanded="true" />
+            <element signature="e#13901#13902#0" expanded="true" />
+            <element signature="e#13937#13938#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14008#14009#0" expanded="true" />
+            <element signature="e#14040#14041#0" expanded="true" />
+            <element signature="e#14101#14102#0" expanded="true" />
+            <element signature="e#14143#14144#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.105263">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -262,4 +262,20 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         db.insert(new Record("2015-12-06", 12, "dinner"));
         Log.i("qiushao", "test ID start");
     }
+
+    public void testSize() {
+        Log.i(TAG, "test Size start");
+
+        db.clean();
+
+        db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
+        db.insert(new Person("2", "qiushao", 26, false, 165.0f, 53.00));
+        db.insert(new Person("3", "junday", 23, false, 165.0f, 52.00));
+        db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
+        db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
+
+        assertEquals(db.size(), 5);
+
+        Log.i(TAG, "test Size end");
+    }
 }
