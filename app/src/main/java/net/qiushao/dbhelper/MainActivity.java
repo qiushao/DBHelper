@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void query() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
-        List<User> users = udb.query(null, null);
+        List<User> users = udb.query("name=?", new String[]{"qiushao"});
         for (User user : users) {
             Log.d("qiushao", user.toString());
         }
