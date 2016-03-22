@@ -22,9 +22,16 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/clean"
+        android:text="clean"
+        android:layout_toRightOf="@id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
         android:id="@+id/update"
         android:text="update"
-        android:layout_toRightOf="@id/delete"
+        android:layout_toRightOf="@id/clean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

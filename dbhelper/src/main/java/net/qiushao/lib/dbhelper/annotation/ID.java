@@ -8,8 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Created by shaoqiu on 2016-3-22.
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Database {
-    int version() default 1;
+public @interface ID {
 }

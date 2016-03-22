@@ -8,21 +8,20 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.text.TextUtils;
 
-import net.qiushao.lib.dbhelper.annotation.Column;
+import net.qiushao.lib.dbhelper.annotation.ID;
+import net.qiushao.lib.dbhelper.annotation.Primary;
+import net.qiushao.lib.dbhelper.annotation.Unique;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class DBHelper<T> extends SQLiteOpenHelper {
-
-    private static boolean debug = true;
 
     private Class<?> claz;
     private SQLiteDatabase db;
@@ -42,12 +41,11 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     private String insertOrIgnoreSql;
     private LinkedList<ColumnInfo> columns;
     private LinkedList<ColumnInfo> primaryColumns;
-    private ColumnInfo id;
 
-    public DBHelper(Context context, String dir, String dbName, String tableName, int version, Class<?> claz, boolean isPublic) {
-        super(new CustomPathDatabaseContext(context, dir, isPublic), dbName, null, version);
+    <T> DBHelper(Context context, Class<T> claz, String dbName, int version) {
+        super(context, dbName, null, version);
         this.dbName = dbName;
-        this.tableName = tableName;
+        this.tableName = claz.getSimpleName();
         tableVersion = version;
         this.claz = claz;
         initDatabaseInfo();
@@ -201,48 +199,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     }
 
     /**
-     * 根据数据库主键查询
-     *
-     * @param keys 主键键值
-     * @return 主键为 keys 的元素
-     */
-    public T queryByPrimary(String[] keys) {
-        if (primaryColumns.size() == 0) {
-            throw new RuntimeException("you should specify the primary key");
-        }
-        StringBuilder sql = new StringBuilder();
-        sql.append("select * from ");
-        sql.append(tableName);
-        sql.append(" where ");
-
-        boolean firstCondition = true;
-        for (ColumnInfo column : primaryColumns) {
-            if (firstCondition) {
-                firstCondition = false;
-                sql.append(column.name);
-                sql.append("=?");
-            } else {
-                sql.append(" and ");
-                sql.append(column.name);
-                sql.append("=?");
-            }
-        }
-
-        readLock.lock();
-        try {
-            Cursor cursor = db.rawQuery(sql.toString(), keys);
-            Collection<T> objects = cursorToObjects(cursor);
-            for (T object : objects) {
-                return object;
-            }
-            return null;
-        } finally {
-            readLock.unlock();
-        }
-    }
-
-    /**
-     * 直接写数据库语句查询，有时候查询的条件比较复杂，比较嵌套查询，联表查询
+     * 直接写数据库语句查询，有时候查询的条件比较复杂，比如嵌套查询，
      * 使用query(String whereClause, String[] args)方法不能满足，
      * 则可以使用此方法来查询
      *
@@ -293,7 +250,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
      * @return 数据库表数据量，即有多少个记录
      */
     public long size() {
-        Cursor cursor = db.rawQuery("select count(*) from " + getTableName() ,null);
+        Cursor cursor = db.rawQuery("select count(*) from " + getTableName(), null);
         cursor.moveToFirst();
         long count = cursor.getLong(0);
         cursor.close();
@@ -318,10 +275,6 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         Object object = null;
         try {
             object = claz.newInstance();
-            if (id != null) {
-                id.field.set(object,
-                        id.type.getValue(cursor, id.index));
-            }
             for (ColumnInfo column : columns) {
                 column.field.set(object, column.type.getValue(cursor, column.index));
             }
@@ -339,10 +292,11 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     }
 
     private void bindInsertStatementArgs(SQLiteStatement statement, Object object) {
-        int inc = (id == null ? 1 : 0);
         try {
+            int index = 1;
             for (ColumnInfo column : columns) {
-                column.type.bindArg(statement, column.index + inc, column.field.get(object));
+                if (column.isID) continue;
+                column.type.bindArg(statement, index++, column.field.get(object));
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -351,94 +305,55 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     }
 
     private void initDatabaseInfo() {
-        columns = new LinkedList<ColumnInfo>();
-        primaryColumns = new LinkedList<ColumnInfo>();
-
-        Field[] fields = claz.getDeclaredFields();
-        int index = 0;
-        for (Field field : fields) {
-            if (!DBType.isSupportType(field.getType())) continue;
-            Column column = field.getAnnotation(Column.class);
-            if (column == null) continue;
-
-            field.setAccessible(true);
-            ColumnInfo columnInfo = new ColumnInfo(
-                    field,
-                    column.name(),
-                    DBType.getDBType(field.getType()),
-                    column.index()
-            );
-
-            if (columnInfo.name.equals("")) {
-                columnInfo.name = field.getName();
-            }
-
-            if (columnInfo.index == -1) {
-                columnInfo.index = index;
-                index++;
-            }
-
-            if (column.primary()) {
-                primaryColumns.add(columnInfo);
-            }
-
-            if (column.ID()) {
-                if (id != null) {
-                    throw new RuntimeException("ID can't be set more than one times!");
-                }
-                id = columnInfo;
-                if (!id.type.getName().equals("INTEGER")) {
-                    throw new RuntimeException("ID column must be integer type");
-                }
-            } else {
-                columns.add(columnInfo);
-            }
-        }
-
-        Collections.sort(columns, new Comparator<ColumnInfo>() {
-            @Override
-            public int compare(ColumnInfo lhs, ColumnInfo rhs) {
-                return lhs.index - rhs.index;
-            }
-        });
-
-        if (id != null && id.index != 0) {
-            columns.get(0).index = id.index;
-            id.index = 0;
-
-            Collections.sort(columns, new Comparator<ColumnInfo>() {
-                @Override
-                public int compare(ColumnInfo lhs, ColumnInfo rhs) {
-                    return lhs.index - rhs.index;
-                }
-            });
-        }
-
+        collectColumns();
         genCreateTableSql();
         genInsertSql();
-        if (debug) {
-            System.out.println("createTableSql = " + createTableSql);
-            System.out.println("insertSql = " + insertSql);
+    }
+
+    private void collectColumns() {
+        columns = new LinkedList<ColumnInfo>();
+        primaryColumns = new LinkedList<ColumnInfo>();
+        Field[] fields = claz.getDeclaredFields();
+
+        for (Field field : fields) {
+            if (Modifier.isTransient(field.getModifiers()) || !DBType.isSupportType(field.getType()))
+                continue;
+            field.setAccessible(true);
+            ColumnInfo columnInfo = new ColumnInfo(field, field.getName(), DBType.getDBType(field.getType()));
+            if (null != field.getAnnotation(Primary.class)) {
+                primaryColumns.add(columnInfo);
+            }
+            if (null != field.getAnnotation(ID.class)) {
+                columnInfo.isID = true;
+            }
+            if (null != field.getAnnotation(Unique.class)) {
+                columnInfo.isUnique = true;
+            }
+            columns.add(columnInfo);
         }
     }
 
     private void genCreateTableSql() {
+        int index = 0;
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE IF NOT EXISTS ");
         sql.append(tableName);
-        if (id != null) {
-            sql.append("(");
-            sql.append(id.name);
-            sql.append(" integer primary key autoincrement, ");
-        } else {
-            sql.append("(");
-        }
+        sql.append("(");
 
         for (ColumnInfo column : columns) {
-            sql.append(column.name);
-            sql.append(" ");
-            sql.append(column.type.getName());
-            sql.append(",");
+            column.index = index++;
+            if (column.isID) {
+                sql.append(column.name);
+                sql.append(" integer primary key autoincrement,");
+            } else {
+                sql.append(column.name);
+                sql.append(" ");
+                sql.append(column.type.getName());
+                if (column.isUnique) {
+                    sql.append(" UNIQUE");
+                }
+                sql.append(",");
+            }
         }
 
         if (primaryColumns.size() > 0) {
@@ -467,6 +382,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         values.append(" VALUES(");
 
         for (ColumnInfo column : columns) {
+            if (column.isID) continue;
             sql.append(column.name);
             sql.append(",");
             values.append("?,");
@@ -487,7 +403,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         return dbName;
     }
 
-    public int getTableVersion() {
+    public int getDBVersion() {
         return tableVersion;
     }
 

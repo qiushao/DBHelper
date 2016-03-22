@@ -11,11 +11,12 @@ class ColumnInfo {
     public DBType type = null;
     public int index = 0;
     public Field field = null;
+    public boolean isID = false;
+    public boolean isUnique = false;
 
-    public ColumnInfo(Field field, String name, DBType type, int index) {
+    public ColumnInfo(Field field, String name, DBType type) {
         this.field = field;
         this.name = name;
         this.type = type;
-        this.index = index;
     }
 }

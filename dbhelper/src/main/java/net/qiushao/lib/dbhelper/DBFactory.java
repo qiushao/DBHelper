@@ -1,14 +1,9 @@
 package net.qiushao.lib.dbhelper;
 
 import android.content.Context;
-import android.text.TextUtils;
 
 import net.qiushao.lib.dbhelper.annotation.Database;
-import net.qiushao.lib.dbhelper.annotation.Timestamp;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class DBFactory {
@@ -33,46 +28,18 @@ public class DBFactory {
 	}
 
 	public synchronized <T> DBHelper<T> getDBHelper(Class<T> claz) {
-		Database database = claz.getAnnotation(Database.class);
-		if (database == null)
-			return null;
-
-		String dbName = database.databaseName();
-		String tableName = database.tableName();
-		if (TextUtils.isEmpty(dbName)) {
-            dbName = context.getPackageName().replaceAll("\\.", "_");
-		}
-		if(TextUtils.isEmpty(tableName)) {
-            tableName = claz.getSimpleName();
-		}
-
-        Timestamp timestamp = claz.getAnnotation(Timestamp.class);
-		if (timestamp != null) {
-			SimpleDateFormat df = new SimpleDateFormat(timestamp.format(), Locale.US);
-			String date = df.format(new Date());
-			dbName = dbName + date + ".db";
-		} else {
-			dbName = dbName + ".db";
-		}
-		
-        String databaseDir = database.databaseDir();
-        if(databaseDir.equals("")) {
-            databaseDir = context.getDatabasePath("dbhelper").getParentFile().getAbsolutePath();
+        String dbName = claz.getName().replaceAll("\\.", "_");
+        if (map.containsKey(dbName)) {
+            return map.get(dbName);
         }
 
-        String key = databaseDir + dbName + tableName;
-        if (map.containsKey(key)) {
-            return map.get(key);
+        int version = 1;
+        Database database = claz.getAnnotation(Database.class);
+        if (database != null) {
+            version = database.version();
         }
-
-		DBHelper<T> db = new DBHelper<>(context,
-                databaseDir,
-                dbName,
-                tableName,
-                database.tableVersion(),
-                claz,
-                database.isPublic());
-		map.put(key, db);
+		DBHelper<T> db = new DBHelper<T>(context, claz, dbName + ".db", version);
+		map.put(dbName, db);
 		return db;
 	}
 }
