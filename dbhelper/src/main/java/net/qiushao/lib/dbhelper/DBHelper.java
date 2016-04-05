@@ -154,6 +154,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         writeLock.lock();
         try {
             db.execSQL("delete from " + tableName);
+            db.execSQL("DELETE FROM sqlite_sequence"); //自增列归零
         } finally {
             writeLock.unlock();
         }

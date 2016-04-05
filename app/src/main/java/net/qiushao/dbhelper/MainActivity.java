@@ -49,14 +49,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void insert() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
-        int uc = (int)udb.size();
-        udb.insert(new User("user" + uc, uc));
+        User user = new User();
+        user.name = "qiushao";
+        user.age = 27;
+        user.email = "qiushaox@gmail.com";
+        user.foobar = 222;
+        udb.insert(user);
+
+        user.name = "shaoqiu";
+        user.email = "shaoqiu@gmail.com";
+        udb.insert(user);
+
+        user.name = "shaoqiu";
+        user.age = 30;
+        user.email = "360325900@qq.com";
+        udb.insert(user);
     }
 
     private void delete() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
-        int uc = (int)udb.size();
-        udb.delete("name=?", new String[]{"user" + uc});
+        udb.delete("name=? and age>?", new Object[]{"qiushao", 100});
     }
 
     private void clean() {
@@ -68,12 +80,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
         ContentValues contentValues = new ContentValues();
         contentValues.put("age", 100);
-        udb.update(contentValues, "name=?", new String[]{"user0"});
+        udb.update(contentValues, "name=?", new String[]{"shaoqiu"});
+
+        List<User> users = udb.query("email=?", new String[]{"qiushaox@gmail.com"});
+        for(User user : users) {
+            user.age = 200;
+            udb.insertOrReplace(user);
+        }
     }
 
     private void query() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
-        List<User> users = udb.query("name=?", new String[]{"qiushao"});
+        List<User> users = udb.query("name=?", new String[]{"shaoqiu"});
         for (User user : users) {
             Log.d("qiushao", user.toString());
         }
