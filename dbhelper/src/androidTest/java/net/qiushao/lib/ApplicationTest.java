@@ -197,28 +197,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         Log.i(TAG, "test query end");
     }
 
-    public void testQueryByPrimary() {
-        Log.i(TAG, "test query by primary start");
-
-        db.clean();
-
-        db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
-        db.insert(new Person("2", "qiushao", 26, false, 165.0f, 53.00));
-        db.insert(new Person("3", "junday", 23, false, 165.0f, 52.00));
-        db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
-        db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
-
-        Person person = db.queryByPrimary(new String[]{"3"});
-        assertEquals(person.id, "3");
-        assertEquals(person.name, "junday");
-        assertEquals(person.age, 23);
-        assertEquals(person.marry, false);
-        assertEquals(person.height, 165.0f);
-        assertEquals(person.weight, 52.00);
-
-        Log.i(TAG, "test query by primary end");
-    }
-
     public void testRawQuery() {
         Log.i(TAG, "test raw query start");
 
@@ -235,25 +213,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         assertEquals(cursor.getCount(), 3);
 
         Log.i(TAG, "test raw query end");
-    }
-
-    public void testExeSql() {
-        Log.i(TAG, "test execSQL start");
-
-        db.clean();
-
-        db.insert(new Person("1", "shaoqiu", 26, false, 165.0f, 53.00));
-        db.insert(new Person("2", "qiushao", 26, false, 165.0f, 53.00));
-        db.insert(new Person("3", "junday", 23, false, 165.0f, 52.00));
-        db.insert(new Person("4", "qiushao", 27, false, 165.0f, 53.00));
-        db.insert(new Person("5", "qiushao", 28, false, 165.0f, 53.00));
-
-        db.execSQL("update " + db.getTableName() + " set age = 30 where id = ?", new Object[]{"1"});
-
-        Person person = db.queryByPrimary(new String[]{"1"});
-        assertEquals(person.age, 30);
-
-        Log.i(TAG, "test exeSql end");
     }
 
     public void testID() {

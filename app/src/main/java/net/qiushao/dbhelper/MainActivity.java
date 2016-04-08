@@ -3,11 +3,11 @@ package net.qiushao.dbhelper;
 import android.content.ContentValues;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 import net.qiushao.lib.dbhelper.DBFactory;
 import net.qiushao.lib.dbhelper.DBHelper;
+import net.qiushao.lib.dbhelper.Debug;
 
 import java.util.List;
 
@@ -50,25 +50,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void insert() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
         User user = new User();
+        user._id = 3;
         user.name = "qiushao";
-        user.age = 27;
-        user.email = "qiushaox@gmail.com";
-        user.foobar = 222;
         udb.insert(user);
 
         user.name = "shaoqiu";
-        user.email = "shaoqiu@gmail.com";
+        user._id = 8;
         udb.insert(user);
 
-        user.name = "shaoqiu";
-        user.age = 30;
-        user.email = "360325900@qq.com";
+        user.name = "junjun";
+        user._id = 9;
         udb.insert(user);
     }
 
     private void delete() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
-        udb.delete("name=? and age>?", new Object[]{"qiushao", 100});
+        udb.delete("name=?", new Object[]{"qiushao"});
     }
 
     private void clean() {
@@ -79,21 +76,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void update() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
         ContentValues contentValues = new ContentValues();
-        contentValues.put("age", 100);
+        contentValues.put("name", "xushaoqiu");
         udb.update(contentValues, "name=?", new String[]{"shaoqiu"});
-
-        List<User> users = udb.query("email=?", new String[]{"qiushaox@gmail.com"});
-        for(User user : users) {
-            user.age = 200;
-            udb.insertOrReplace(user);
-        }
     }
 
     private void query() {
         DBHelper<User> udb = DBFactory.getInstance(this).getDBHelper(User.class);
-        List<User> users = udb.query("name=?", new String[]{"shaoqiu"});
+        List<User> users = udb.query("name=?", new String[]{"qiushao"});
         for (User user : users) {
-            Log.d("qiushao", user.toString());
+            Debug.d(user.name);
+            user.name = "foobar";
+            udb.insertOrReplace(user);
         }
     }
 }

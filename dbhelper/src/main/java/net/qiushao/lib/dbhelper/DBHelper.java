@@ -80,7 +80,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     public void insertOrReplace(T object) {
         writeLock.lock();
         try {
-            bindInsertStatementArgs(insertOrReplaceStatement, object);
+            bindInsertOrReplaceStatementArgs(insertOrReplaceStatement, object);
             insertOrReplaceStatement.execute();
         } finally {
             writeLock.unlock();
@@ -96,7 +96,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     public void insertOrIgnore(T object) {
         writeLock.lock();
         try {
-            bindInsertStatementArgs(insertOrIgnoreStatement, object);
+            bindInsertOrReplaceStatementArgs(insertOrIgnoreStatement, object);
             insertOrIgnoreStatement.execute();
         } finally {
             writeLock.unlock();
@@ -305,6 +305,18 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         }
     }
 
+    private void bindInsertOrReplaceStatementArgs(SQLiteStatement statement, Object object) {
+        try {
+            int index = 1;
+            for (ColumnInfo column : columns) {
+                column.type.bindArg(statement, index++, column.field.get(object));
+            }
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
     private void initDatabaseInfo() {
         collectColumns();
         genCreateTableSql();
@@ -331,6 +343,7 @@ public class DBHelper<T> extends SQLiteOpenHelper {
                 columnInfo.isUnique = true;
             }
             columns.add(columnInfo);
+            Debug.d("add column : " + columnInfo.name);
         }
     }
 
@@ -373,31 +386,57 @@ public class DBHelper<T> extends SQLiteOpenHelper {
     }
 
     private void genInsertSql() {
-        StringBuilder sql = new StringBuilder();
+        StringBuilder insertSB = new StringBuilder();
+        StringBuilder insertOrReplaceSB = new StringBuilder();
 
-        sql.append("INSERT OR REPLACE INTO ");
-        sql.append(tableName);
-        sql.append("(");
+        insertSB.append("INSERT INTO ");
+        insertSB.append(tableName);
+        insertSB.append("(");
 
-        StringBuilder values = new StringBuilder();
-        values.append(" VALUES(");
+        insertOrReplaceSB.append("INSERT OR REPLACE INTO ");
+        insertOrReplaceSB.append(tableName);
+        insertOrReplaceSB.append("(");
+
+        StringBuilder insertValues = new StringBuilder();
+        StringBuilder insertOrReplaceValues = new StringBuilder();
+        insertValues.append(" VALUES(");
+        insertOrReplaceValues.append(" VALUES(");
 
         for (ColumnInfo column : columns) {
-            if (column.isID) continue;
-            sql.append(column.name);
-            sql.append(",");
-            values.append("?,");
+            if (column.isID) {
+                insertOrReplaceSB.append(column.name);
+                insertOrReplaceSB.append(",");
+                insertOrReplaceValues.append("?,");
+                continue;
+            };
+            insertSB.append(column.name);
+            insertSB.append(",");
+            insertOrReplaceSB.append(column.name);
+            insertOrReplaceSB.append(",");
+            insertValues.append("?,");
+            insertOrReplaceValues.append("?,");
         }
 
-        sql.deleteCharAt(sql.length() - 1);
-        sql.append(")");
-        values.deleteCharAt(values.length() - 1);
-        values.append(")");
+        insertSB.deleteCharAt(insertSB.length() - 1);
+        insertSB.append(")");
+        insertOrReplaceSB.deleteCharAt(insertOrReplaceSB.length() - 1);
+        insertOrReplaceSB.append(")");
 
-        sql.append(values);
-        insertOrReplaceSql = sql.toString();
+        insertValues.deleteCharAt(insertValues.length() - 1);
+        insertValues.append(")");
+        insertOrReplaceValues.deleteCharAt(insertOrReplaceValues.length() - 1);
+        insertOrReplaceValues.append(")");
+
+        insertSB.append(insertValues);
+        insertOrReplaceSB.append(insertOrReplaceValues);
+
+        insertSql = insertSB.toString();
+        insertOrReplaceSql = insertOrReplaceSB.toString();
         insertOrIgnoreSql = insertOrReplaceSql.replaceFirst("OR REPLACE ", "OR IGNORE ");
-        insertSql = insertOrReplaceSql.replaceFirst("OR REPLACE ", "");
+
+        Debug.d("insert sql = " + insertSql);
+        Debug.d("insert or replace sql = " + insertOrReplaceSql);
+        Debug.d("insert or ignore sql = " + insertOrIgnoreSql);
     }
 
     public String getDBName() {
