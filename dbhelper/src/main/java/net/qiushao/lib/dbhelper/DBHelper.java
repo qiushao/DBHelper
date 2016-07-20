@@ -66,6 +66,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         try {
             bindInsertStatementArgs(insertStatement, object);
             insertStatement.executeInsert();
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             writeLock.unlock();
         }
@@ -82,6 +84,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         try {
             bindInsertOrReplaceStatementArgs(insertOrReplaceStatement, object);
             insertOrReplaceStatement.execute();
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             writeLock.unlock();
         }
@@ -98,6 +102,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         try {
             bindInsertOrReplaceStatementArgs(insertOrIgnoreStatement, object);
             insertOrIgnoreStatement.execute();
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             writeLock.unlock();
         }
@@ -117,6 +123,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
                 insertStatement.executeInsert();
             }
             db.setTransactionSuccessful();
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             db.endTransaction();
             writeLock.unlock();
@@ -142,6 +150,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         writeLock.lock();
         try {
             db.execSQL(sql.toString(), whereArgs);
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             writeLock.unlock();
         }
@@ -155,6 +165,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         try {
             db.execSQL("delete from " + tableName);
             db.execSQL("DELETE FROM sqlite_sequence"); //自增列归零
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             writeLock.unlock();
         }
@@ -170,9 +182,12 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         readLock.lock();
         try {
             return db.update(tableName, values, whereClause, whereArgs);
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             readLock.unlock();
         }
+        return 0;
     }
 
     /**
@@ -183,6 +198,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
      * @return 返回满足条件的对象
      */
     public List<T> query(String whereClause, String[] args) {
+        List<T> list = new ArrayList<>();
+        Cursor cursor = null;
         StringBuilder sql = new StringBuilder();
         sql.append("select * from ");
         sql.append(tableName);
@@ -192,11 +209,17 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         }
         readLock.lock();
         try {
-            Cursor cursor = db.rawQuery(sql.toString(), args);
-            return cursorToObjects(cursor);
+            cursor = db.rawQuery(sql.toString(), args);
+            list = cursorToObjects(cursor);
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
+            if(null != cursor) {
+                cursor.close();
+            }
             readLock.unlock();
         }
+        return list;
     }
 
     /**
@@ -212,9 +235,12 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         readLock.lock();
         try {
             return db.rawQuery(sql, args);
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             readLock.unlock();
         }
+        return null;
     }
 
     /**
@@ -226,11 +252,12 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         writeLock.lock();
         try {
             db.execSQL(sql);
+        } catch (Exception e){
+            e.printStackTrace();
         } finally {
             writeLock.unlock();
         }
     }
-
 
     /**
      * 执行不带返回值的数据库语句
@@ -242,6 +269,8 @@ public class DBHelper<T> extends SQLiteOpenHelper {
         writeLock.lock();
         try {
             db.execSQL(sql, args);
+        }catch(Exception e){
+            e.printStackTrace();
         } finally {
             writeLock.unlock();
         }
@@ -268,7 +297,6 @@ public class DBHelper<T> extends SQLiteOpenHelper {
                 }
             }
         }
-        cursor.close();
         return list;
     }
 
